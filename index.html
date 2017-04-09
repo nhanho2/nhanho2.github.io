@@ -1,32 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>The House of Books</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	 <script src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
 	<link rel="shortcut icon" href="css/images/icon.png" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-	
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />	
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
 </head>
 <body>
 	<!-- Header -->
-	<div id="header" class="shell">
-		<div id="logo"><a href="#"><img src="images.jpg"/></a></div>
-		<!-- Navigation -->
-		<div id="navigation">
-
-				<div><a href="#"><strong>Home</strong></a></div>
-				<div><a href="#"><strong>Products</strong></a></div>
-				<div><a href="#"><strong>About Us</strong></a></div>
-				<div><a href="#"><strong>Contacts</strong></a></div>
-			
-		</div>
-		<!-- End Navigation -->
-		<div class="cl">&nbsp;</div>
-		
-	</div>
+	<nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="nav">
+      <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+           </button>
+         <a href="#" class="navbar-brand"><img src="logo.jpg" class="logo"></a>       
+       </div>
+       <div class="collapse navbar-collapse" id="mynavbar1">
+         <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#">Contacts</a></li>
+         </ul>
+       </div>            
+      <form class="navbar-form navbar-left" role="search">
+         <div class="form-group input-group" id="search">
+            <input type="text" class="form-control" placeholder="Search">
+             <span class="input-group-btn">
+               <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+             </span>
+         </div>
+      </form>
+    <ul class="nav navbar-nav navbar-right">
+           <li><a href="#"><span class="glyphicon glyphicon-user"></span>My Account</a></li>
+           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>My Shopping</a></li>
+    </ul>
+    </div>
+  </nav>
 	<!-- End Header -->
 	<!-- Slider -->
+	
 	<div id="slider">
+	<div class="row">   
 		<div class="shell">
 			<ul>
 				<li>
@@ -85,15 +115,17 @@
 				<a href="#">4</a>
 			</div>
 		</div>
+    </div>
 	</div>
 	<!-- End Slider -->
 	<!-- Main -->
-	<div id="main" class="shell">
-		<!-- Sidebar -->
-		<div id="sidebar">
+	<div id="main" class="shell">		
+	<div class="row">
+		<div class="col-sm-3">
+			<div id="sidebar">
 			<ul class="categories">
 				<li>
-					<h4>Categories</h4>
+					<h4><strong>Categories</strong></h4>
 					<ul>
 						<li><a href="#">Lorem ipsum dolor</a></li>
 						<li><a href="#">Morbi eget</a></li>
@@ -105,7 +137,7 @@
 					</ul>
 				</li>
 				<li>
-					<h4>Authors</h4>
+					<h4><strong>Authors</strong></h4>
 					<ul>
 						<li><a href="#">Lorem ipsum dolor</a></li>
 						<li><a href="#">Morbi eget</a></li>
@@ -122,15 +154,13 @@
 					</ul>
 				</li>
 			</ul>
+			</div>		
 		</div>
-		<!-- End Sidebar -->
-		<!-- Content -->
-		<div id="content">
-			<!-- Products -->
-			<div class="products">
-				<h3>Featured Products</h3>
-				<ul>
-					<li>
+		<div class="col-sm-9">
+	    <h3><strong>Featured Products</strong></h3>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -142,8 +172,11 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">
+				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -155,8 +188,11 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">
+				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -168,8 +204,11 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">
+				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -181,8 +220,12 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -194,8 +237,11 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">
+				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -207,8 +253,10 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -220,8 +268,11 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-					<li>
+				</div>	
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<div class="products">
+				
 						<div class="product">
 							<a href="#" class="info">
 								<span class="holder">
@@ -233,14 +284,12 @@
 							</a>
 							<a href="#" class="buy-btn">BUY NOW <span class="price"><span class="low">$</span>22<span class="high">00</span></span></a>
 						</div>
-					</li>
-				</ul>
-			<!-- End Products -->
+				</div>	
 			</div>
-			<div class="cl">&nbsp;</div>
-			<!-- Best-sellers -->
+		</div>
+		<div class="row">
 			<div id="best-sellers">
-				<h3>Best Sellers</h3>
+				<h3><strong>Best Sellers</strong></h3>
 				<ul>
 					<li>
 						<div class="product">
@@ -324,20 +373,26 @@
 					</li>
 				</ul>
 			</div>
-			<!-- End Best-sellers -->
+			</div>
 		</div>
-		<!-- End Content -->
-		<div class="cl">&nbsp;</div>
+		</div>
+	</div>	
 	</div>
-	<!-- End Main -->
-	<!-- Footer -->
-	<div id="footer" class="shell">
+	<!-- Footer -->	 
+    <div id="footer" class="shell">
+      <div class="row">
+        <div class="col-sm-4">
 		<div class="top">
 			<div class="cnt">
-				<div class="col about">
-					<h4>About OurStore</h4>
+				<div class="col about" id="about">
+					<h4>About Us</h4>
 					<p></p>
-				</div>				
+				</div>	
+	        </div>
+	     </div>
+	    </div>
+	    <div class="col-sm-4"></div>
+	    <div class="col-sm-4">			
 				<div class="col" id="newsletter">
 					<h4>Newsletter</h4>
 					<p>Please leave your infomation to contact us :) </p>
@@ -348,14 +403,13 @@
 					</form>
 				</div>
 				<div class="cl">&nbsp;</div>	
-
-			</div>
+        </div>
+	  </div>
 
 		</div>
-
-	</div>
+   
     <div id="home"><a href="#header"><img src="css/images/home.jpg"/></a></div>
-	<!-- End Footer -->
+	<!-- End Footer -->	 
 	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
