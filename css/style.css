@@ -36,7 +36,7 @@ textarea { overflow: auto; }
 
 .shell { width: 1000px; margin: 0 auto; background: url(images/shell.png) repeat-y 0 0; padding: 0 57px 0 57px; position: relative; }
 
-#header { padding-top: 30px; }
+
 #logo img{ width: 100px; height: 80px; float: left; display: inline; margin-bottom: 20px;  position: relative; }
 .glyphicon {margin-right:6px;}
 
