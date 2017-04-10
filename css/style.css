@@ -76,7 +76,7 @@ textarea { overflow: auto; }
 }
 #slider .read-more-btn:hover { color: #0f173a; text-decoration: none; }
 
-#main { padding-top: 51px; padding-bottom: 41px; z-index: 1; }
+#main { padding-top: 52px; padding-bottom: 41px; z-index: 1; }
 
 #sidebar { float: left; display: inline; width: 214px; padding: 6px 0; }
 #sidebar h4 { border-bottom: solid 4px #eaeaea; padding: 0 0 8px 1px; }
