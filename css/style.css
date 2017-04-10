@@ -15,8 +15,12 @@ nav {min-height:10px;}
 	margin-left: 20px;
 }
 .navbar-inverse .navbar-form {margin-left: 10%;}
+.navbar-nav li {margin-right:-5%;}
+#log  {margin-left: -40%;margin-top:1.005%; padding-left: -1%;display: inline;}
+
 #search {
 	margin-top:4%; 
+	margin-left: -90%;
 }
 .logo {width:60px; height: 60px;}
 li{
@@ -39,8 +43,8 @@ textarea { overflow: auto; }
 
 #logo img{ width: 100px; height: 80px; float: left; display: inline; margin-bottom: 20px;  position: relative; }
 .glyphicon {margin-right:6px;}
-
-
+#rating .glyphicon-star-empty {font-size: 24px;color:#DFC045;cursor: pointer;}
+#rating .glyphicon-star {font-size: 24px;color:#DFC045;cursor: pointer;}
 #slider { 
 	background: url(images/slider-bg.png) repeat-x 0 0; height: 364px; 
 	position: relative; z-index: 10;
@@ -89,11 +93,11 @@ textarea { overflow: auto; }
 #sidebar .categories ul li a { color: #929292; }
 #cart {
 	background: url(http://i1.ebkimg.com/images/other/start-reading-btn.png) left bottom no-repeat;
-	padding:12px; padding-left: 50px;
+	padding:12px; padding-left: 18%;
 	color:white;
 }
 #rating span .glyphicon{
-	font-size: 24px
+	font-size: 24px;
 	color:#DFC045;
 }
 #content { float: right; display: inline; width: 635px; }
