@@ -76,7 +76,7 @@ textarea { overflow: auto; }
 }
 #slider .read-more-btn:hover { color: #0f173a; text-decoration: none; }
 
-#main { padding-top: 52px; padding-bottom: 41px; z-index: 1; }
+#main { padding-top: 52px; padding-bottom: 41px; z-index: 1; margin-top:-1.7%; }
 
 #sidebar { float: left; display: inline; width: 214px; padding: 6px 0; }
 #sidebar h4 { border-bottom: solid 4px #eaeaea; padding: 0 0 8px 1px; }
@@ -100,6 +100,18 @@ textarea { overflow: auto; }
 	font-size: 24px;
 	color:#DFC045;
 }
+ #signup {
+	margin:30px auto; width:600px; height:600px;
+    border:solid 1px #AAA9A9; border-radius:5px;
+    background-color:#15F268;
+    padding:30px; padding-bottom: 15px;
+}
+#signup .form-group {margin-bottom:5%;}
+ #signup h2 { 
+	 font-family: 'Georgia', Arial, serif; font-style: italic;
+     font-size: 25px; line-height: 24px; color:white; 
+     
+ }
 #content { float: right; display: inline; width: 635px; }
 #content h3 { padding: 0 0 7px 3px; border-bottom: solid 4px #eaeaea; margin-bottom: 12px; }
 

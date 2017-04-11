@@ -16,9 +16,10 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
 </head>
 <body>
+    <!-- Main Page -->
 	<!-- Header -->
 	<nav class="navbar navbar-inverse">
     <div class="container-fluid" id="header">
@@ -423,7 +424,7 @@
 						<div class="form-buttons"><input type="submit" value="Submit" class="submit-btn" /></div>
 					</form>
 				</div>
-				<div class="cl">&nbsp;</div>	
+				
         </div>
 	  </div>
 
@@ -431,6 +432,9 @@
    
     <div id="home"><a href="#header"><img src="css/images/home.jpg"/></a></div>
 	<!-- End Footer -->
+	<!-- End Main Page -->
+
+	<!-- Detail Page -->
 	<!-- Header -->
 	<nav class="navbar navbar-inverse">
     <div class="container-fluid" id="header">
@@ -675,18 +679,207 @@
 						<input type="text" class="field" value="Email" title="Email" />				
 						<div class="form-buttons"><input type="submit" value="Submit" class="submit-btn" /></div>
 					</form>
-				</div>
-				<div class="cl">&nbsp;</div>	
+				</div>			
         </div>
-	  </div>
-
-		</div>
-   
+	</div>
+	</div>   
     <div id="home"><a href="#header"><img src="css/images/home.jpg"/></a></div>
-	<!-- End Footer -->	 	 
+	<!-- End Footer -->	
+	<!-- End Detail Page --> 
+
+	<!-- Signup Page -->
+	<!-- Header -->
+	<nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="header">
+      <div class="navbar-header" >
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+           </button>
+         <a href="#header" class="navbar-brand"><img src="logo.jpg" class="logo"></a>       
+       </div>
+       <div class="collapse navbar-collapse" id="mynavbar1">
+         <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#">Contacts</a></li>
+         </ul>
+       </div>            
+      <form class="navbar-form navbar-left" role="search">
+         <div class="form-group input-group" id="search">
+            <input type="text" class="form-control" placeholder="Search">
+             <span class="input-group-btn">
+               <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+             </span>
+         </div>
+      </form>
+    <ul class="nav navbar-nav navbar-right">
+           <li><a href="#"><span class="glyphicon glyphicon-user"></span>My Account</a></li>
+           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>My Shopping</a></li>
+    </ul>
+    </div>
+  </nav>
+	<!-- End Header -->
+	<!-- Main -->
+	<div id="main" class="shell">		  
+		    <div class="container" id="signup">
+		    	<h2><strong>SignUp with Email</strong></h2>
+		    	<div>
+		    		<form>
+  						<div class="form-group">   							
+    						<input type="email" class="form-control" placeholder="Email" required="">
+ 						</div>
+  						<div class="form-group">    						
+    						<input type="password" class="form-control" placeholder="Password" required="">
+  						</div>	
+  						<div class="form-group">    						
+    						<input type="text" class="form-control" placeholder="Nick Name">
+  						</div>
+  						<div class="form-group">    						
+    						<input type="text" class="form-control" placeholder="Phone number">
+  						</div>	
+    					<button type="submit" class="btn btn-primary">SignUp Now</button>
+    					<strong>--Or SignUp via--</strong>
+    					<a href="#" class="btn btn-social-icon btn-twitter" style="color:white; background-color:#0CAAF4;border-radius:100%;font-size:20px;">
+    						<span class="fa fa-twitter"></span>
+  						</a>
+  						<a href="#" class="btn btn-social-icon btn-facebook" style="color:white; background-color:#050ADD;border-radius:100%;font-size:20px;width:8%;">
+    						<span class="fa fa-facebook"></span>
+  						</a>
+  						<a href="#" class="btn btn-social-icon btn-facebook" style="color:white; background-color:#F13B0A;border-radius:100%;font-size:20px;">
+    						<span class="fa fa-google"></span>
+  						</a>
+					</form>
+
+		    	</div>
+		    </div>
+	  	
+		<div class="row">
+		    <div class="col-sm-3"></div>
+		    <div class="col-sm-9">
+			<div id="best-sellers">
+				<h3><strong>Best Sellers</strong></h3>
+				<ul>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best01.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>35<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best02.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>45<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best03.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>15<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best04.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>27<span class="high">99</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best01.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>35<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best02.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>45<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best03.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>15<span class="high">00</span></span>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="product">
+							<a href="#">
+								<img src="css/images/image-best04.jpg" alt="" />
+								<span class="book-name">Book Name </span>
+								<span class="author">by John Smith</span>
+								<span class="price"><span class="low">$</span>27<span class="high">99</span></span>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			</div>
+	</div>
+	</div>
+	<!-- Footer -->	 
+    <div id="footer" class="shell">
+      <div class="row">
+        <div class="col-sm-4">
+		<div class="top">
+			<div class="cnt">
+				<div class="col about" id="about">
+					<h4>About Us</h4>
+					<p></p>
+				</div>	
+	        </div>
+	     </div>
+	    </div>
+	    <div class="col-sm-4"></div>
+	    <div class="col-sm-4">			
+				<div class="col" id="newsletter">
+					<h4>Newsletter</h4>
+					<p>Please leave your infomation to contact us :) </p>
+					<form action="" method="post">
+						<input type="text" class="field" value="Your Name" title="Your Name" />
+						<input type="text" class="field" value="Email" title="Email" />				
+						<div class="form-buttons"><input type="submit" value="Submit" class="submit-btn" /></div>
+					</form>
+				</div>			
+        </div>
+	</div>
+	</div>   
+    <div id="home"><a href="#header"><img src="css/images/home.jpg"/></a></div>
+	<!-- End Footer -->	
+	<!-- End Signup Page -->	 
 	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
-
+    <script type="text/javascript" src="js/rating.js"></script>
 </body>
 </html>
