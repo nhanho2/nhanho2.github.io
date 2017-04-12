@@ -17,26 +17,58 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-                <a class="navbar-brand" href="#">Logo</a>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#"><img class="logo" src="css/images/icon.png" /></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Admin</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputPassword3">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </form>
+                <div class="container">
+                    <div class="row">
+                        <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="  search-query form-control" placeholder="Search" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>User</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+        </ul>
     </nav>
     <!-- End Menu Bar -->
+    <!-- Carousel -->
     <div class="row">
         <div class="container">
             <div class="col-sm-12">
@@ -74,83 +106,242 @@
                     </a>
                 </div>
             </div>
+            <!-- End Carousel -->
             <!-- Main content -->
             <div class="container text-center">
-                <h3>What We Do</h3>
+                <h2><strong>Best Sellers</strong></h2>
                 <div class="row">
+                    <!-- SideBar -->
                     <div class="col-sm-3">
-                        <div class="list-group wizard-menu">
-                            <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
-                                <h4 class="list-group-item-heading">1. Load from DIV
-                                    <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                                </h4>
-                            </a>
-                            <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
-                                <h4 class="list-group-item-heading">2. Load from DIV
-                                    <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                                </h4>
-                            </a>
-                            <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
-                                <h4 class="list-group-item-heading">3. AJAX Load
-                                    <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                                </h4>
-                            </a>
+                        <div class="catalogies">
+                            <h2><strong>Catalogies</strong></h2>
+                            <div class="list-group wizard-menu">
+                                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
+                                    <h4 class="list-group-item-heading">COMIC
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                                    <h4 class="list-group-item-heading">ADVENTURE
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                                    <h4 class="list-group-item-heading">NOVEL
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                                    <h4 class="list-group-item-heading">XXX :v
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                    <!-- End SideBar -->
                     <div class="col-sm-9">
                         <div class="products">
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="product">
-                                        <img class="img-responsive" src="http://ecx.images-amazon.com/images/I/5155GTXUwvL._SL160_PIsitb-sticker-arrow-dp,TopRight,12,-18_SH30_OU31_AC_US160_FMwebp_QL70_.jpg"
-                                            title="City of Wolves">
+                                        <img class="img-responsive" src="http://ecx.images-amazon.com/images/I/5155GTXUwvL._SL160_PIsitb-sticker-arrow-dp,TopRight,12,-18_SH30_OU31_AC_US160_FMwebp_QL70_.jpg" title="City of Wolves">
                                         <p class="title"><strong>City of Wolves</strong</p>
-                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>       
-                                        <button type="button">BUY NOW</button>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
                                     </div>
                                 </div>
-                                >
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/51kqmA-jyDL._SY160_.jpg" title="Onikymn Crystal">
+                                        <p class="title"><strong>Onikymn Crystal</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/41wjK57o3vL._SY160_.jpg" title="Love for Two">
+                                        <p class="title"><strong>Love for Two</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="http://www.dccomics.com/sites/default/files/styles/comics320x485/public/comic-covers/2016/04/JUSTL_Cv1_5707f958086311.46609458.jpg?itok=9tpO-Tri" title="Justice League">
+                                        <p class="title"><strong>Justice League</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="http://ecx.images-amazon.com/images/I/5155GTXUwvL._SL160_PIsitb-sticker-arrow-dp,TopRight,12,-18_SH30_OU31_AC_US160_FMwebp_QL70_.jpg" title="City of Wolves">
+                                        <p class="title"><strong>City of Wolves</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/51kqmA-jyDL._SY160_.jpg" title="Onikymn Crystal">
+                                        <p class="title"><strong>Onikymn Crystal</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/41wjK57o3vL._SY160_.jpg" title="Love for Two">
+                                        <p class="title"><strong>Love for Two</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="http://www.dccomics.com/sites/default/files/styles/comics320x485/public/comic-covers/2016/04/JUSTL_Cv1_5707f958086311.46609458.jpg?itok=9tpO-Tri" title="Justice League">
+                                        <p class="title"><strong>Justice League</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                        <button class="btn-buy" type="button">BUY NOW</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
             </div>
-            <div class="container text-center ">
-                <h3>Our Partners</h3>
+            <div class="recommend">
+                <h2><strong>Recommend</strong></h2>
                 <br>
-                <div class="row ">
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 1</p>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="product">
+                            <img class="img-responsive" src="http://ecx.images-amazon.com/images/I/5155GTXUwvL._SL160_PIsitb-sticker-arrow-dp,TopRight,12,-18_SH30_OU31_AC_US160_FMwebp_QL70_.jpg" title="City of Wolves">
+                            <p class="title"><strong>City of Wolves</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                            <button class="btn-buy" type="button">BUY NOW</button>
+                        </div>
                     </div>
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 2</p>
+                    <div class="col-sm-3">
+                        <div class="product">
+                            <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/51kqmA-jyDL._SY160_.jpg" title="Onikymn Crystal">
+                            <p class="title"><strong>Onikymn Crystal</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                            <button class="btn-buy" type="button">BUY NOW</button>
+                        </div>
                     </div>
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 3</p>
+                    <div class="col-sm-3">
+                        <div class="product">
+                            <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/41wjK57o3vL._SY160_.jpg" title="Love for Two">
+                            <p class="title"><strong>Love for Two</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                            <button class="btn-buy" type="button">BUY NOW</button>
+                        </div>
                     </div>
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 4</p>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 5</p>
-                    </div>
-                    <div class="col-sm-2 ">
-                        <img src="https://placehold.it/150x80?text=IMAGE " class="img-responsive " style="width:100% " alt="Image ">
-                        <p>Partner 6</p>
+                    <div class="col-sm-3">
+                        <div class="product">
+                            <img class="img-responsive" src="http://www.dccomics.com/sites/default/files/styles/comics320x485/public/comic-covers/2016/04/JUSTL_Cv1_5707f958086311.46609458.jpg?itok=9tpO-Tri" title="Justice League">
+                            <p class="title"><strong>Justice League</strong</p>
+                                        <p class="author">Nhan Ho</p>
+                                        <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                            <button class="btn-buy" type="button">BUY NOW</button>
+                        </div>
                     </div>
                 </div>
             </div><br>
             <!-- End Main content -->
-
-            <footer class="container-fluid text-center ">
-                <p>Footer Text</p>
-            </footer>
+            <!-- Detail Page -->
+            <div class="container text-center">
+                <div class="row">
+                    <!-- SideBar -->
+                    <div class="col-sm-3">
+                        <div class="catalogies">
+                            <h2><strong>Catalogies</strong></h2>
+                            <div class="list-group wizard-menu">
+                                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
+                                    <h4 class="list-group-item-heading">COMIC
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                                    <h4 class="list-group-item-heading">ADVENTURE
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                                    <h4 class="list-group-item-heading">NOVEL
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                                    <h4 class="list-group-item-heading">XXX :v
+                                        <span class="pull-right"><i class="glyphicon glyphicon-chevron-right"></i></span>
+                                    </h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End SideBar -->
+                    <div class="col-sm-9">
+                        <div class="detail">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="product">
+                                        <img class="img-responsive" src="http://www.dccomics.com/sites/default/files/styles/comics320x485/public/comic-covers/2016/04/JUSTL_Cv1_5707f958086311.46609458.jpg?itok=9tpO-Tri" title="Justice League">
+                                        <p class="title"><strong>Justice League</strong</p>
+                                            <p class="author">Nhan Ho</p>
+                                            <p class="price"><strong><span class="glyphicon glyphicon-usd"></span>10</strong></p>
+                                    </div>
+                                    <button class="btn-add" type="button"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button>
+                                </div>
+                                <div class="col-sm-9">
+                                    <h3><strong>Justice League</strong></h3>
+                                    <p>“THE EXTINCTION MACHINE” Chapter One</p>
+                                    <p>The oceans rise. The earth quakes. And an ancient power rises to reclaim not just the world, but the universe itself—and not even the combined might of the Justice League can stop it. An all-new era begins with this
+                                        epic by comic book legend Bryan Hitch (JLA, The Ultimates) and master storyteller Tony S. Daniel (BATMAN: R.I.P., DEATHSTROKE).</p>
+                                    <br>
+                                    <h2><strong>Rating</strong></h2>
+                                    <div class="rating">
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                        <span class="glyphicon glyphicon-star-empty"></span>
+                                    </div>
+                                    <br>
+                                    <h2><strong>Feedback</strong></h2>
+                                    <textarea rows="5" cols="75"></textarea>
+                                    <button type="submit" class="btn btn-primary">Submid</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Detail Page -->
+            <!-- Footer -->
+            <div class="container-fluid text-center ">
+                <div class="footer">
+                    <h2>© Nhan Fisher Ho. All rights reserved</h2>
+                </div>
+            </div>
+            <!-- End Footer -->
 </body>
 
 </html>
