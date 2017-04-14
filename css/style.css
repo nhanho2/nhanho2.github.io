@@ -1,352 +1,60 @@
-.carousel-inner img {
-    width: 100%;
-    /* Set width to 100% */
-    min-height: 200px;
-}
-
-
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-
-@media (max-width: 600px) {
-    .carousel-caption {
-        display: none;
+.navbar {
+    border-radius:0px;
     }
+.navbar-brand .logo {
+    display:inline;
+    max-width:50px;
+    max-height:40px;
+    margin-top:-17%;
 }
+.input-group-addon {
+    border:none;
+    background: white;
+    }
+#search {
+    border:none;
+    background: white;
+    }
+.carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
 
-h2 {
-    color: #800000;
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+.img-responsive {
+    width:100%;
+    height:100%;
 }
-
-.detail .row .col-sm-9 h2 {
-    color: #800000;
-    text-align: left;
-    border-bottom: 1px solid #b7b7b7;
-}
-
-label {
-    color: white;
-}
-
-.navbar-brand img {
-    width: 50px;
-    height: 40px;
-    margin-top: -10px;
-}
-
-.navbar-right {
-    display: inline;
-    margin-right: 18px;
-}
-
-.navbar-form {
-    margin-bottom: -1%;
-    margin-top: 6px;
-}
-
-.search-query:focus+button {
-    z-index: 3;
-}
-
-.input-group {
-    width: 30%;
-    float: left;
-}
-
-.row {
-    margin-bottom: 15px;
-}
-
-.glyphicon {
-    margin-right: 10px;
-    font-size: 15px;
-}
-
-.rating {
-    text-align: left;
-    color: #c40000;
-}
-
-.rating .glyphicon {
-    font-size: 25px;
-}
-
-.price {
-    color: #ffff1a;
-}
-
-.products .row .col-sm-3 {
-    max-width: 16%;
-    padding: 10px;
-    border: 1px solid #a8a8a8;
-    margin-right: 2.4%;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #c0c0c0;
-}
-
-.recommend h2 {
-    text-align: center;
-}
-
-.recommend .row .col-sm-3 {
-    max-width: 16%;
-    padding: 20px;
-    padding-left: 28px;
-    border: 1px solid #a8a8a8;
-    margin-left: 8%;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #c0c0c0;
-    text-align: center;
-}
-
-.price {
-    font-size: 16px;
-}
-
-.product img {
-    border: none;
-    position: relative;
-    width: 100%;
-    width: 175px;
-    height: 180px;
-}
-
-.list-group .wizard-menu {
-    margin-right: 40px;
-}
-
-.product .title {
-    font-family: display: block;
-    font-size: 18px;
-    color: #555555;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    margin: 8px auto 0;
-    height: 36px;
-    line-height: 18px;
-}
-
-.product .author {
-    font-family: display: block;
-    font-size: 15px;
-    color: #555555;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    margin: 8px auto 0;
-    height: 36px;
-    line-height: 18px;
-}
-
-.product .btn-buy {
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    color: white;
-    background-color: #1ea0ee;
-    border: 1px solid #1ea0ee;
-    border-radius: 6px;
-}
-
-.btn-danger {
-    position: relative;
-    left: -10%;
-}
-
-.product .btn-buy:hover {
-    border: 1px solid #3dd35f;
-    background-color: #3dd35f;
-    border-radius: 6px;
-}
-
-.detail .row .col-sm-3 {
-    width: 175px;
-    padding: 10px;
-    padding-left: 4px;
-    border: 1px solid #a8a8a8;
-    margin-left: 5%;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #c0c0c0;
-    text-align: center;
-}
-
-.btn-add {
-    background-color: #ff8000;
-    border-radius: 6px;
+.product {
     text-align: justify;
-    color: #400000;
 }
-
-.detail .row .col-sm-9 {
-    text-align: right;
-    max-width: 55%;
+.glyphicon-star {
+    font-size:15px;
+    color:#eaef21;
 }
-
-.detail img {
-    margin-left: 3%;
-}
-
-.signup {
-    border: 1px solid #b7b7b7;
-    border-radius: 6px;
-    background-color: #008040;
-}
-
-legend {
-    color: white;
-}
-
-.social-google {
-    width: 4%;
-    font-size: 20px;
-    margin-right: 6px;
-    border-radius: 100%;
-    background-color: #da573b;
-    border-color: #be5238;
-}
-
-.social-google:hover {
-    background-color: #be5238;
-    border-color: #9b4631;
-}
-
-.social-twitter {
-    font-size: 20px;
-    margin-right: 6px;
-    background-color: #1daee3;
-    border-color: #3997ba;
-    border-radius: 100%;
-}
-
-.social-twitter:hover {
-    background-color: #3997ba;
-    border-color: #347b95;
-}
-
-.social-facebook {
-    font-size: 20px;
-    width: 4%;
-    margin-right: 6px;
-    border-radius: 100%;
-    background-color: #4c699e;
-    border-color: #47618d;
-}
-
-.social-facebook:hover {
-    background-color: #47618d;
-    border-color: #3c5173;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Lobster);
-
-/*panel heading*/
-
-h1 {
+.rating {
     text-align: center;
-    font-size: 28px;
-    font-family: 'georgia', cursive;
-    color: #ff8040;
 }
-
-
-/*panel align center*/
-
-.col-sm-12 {
-    float: none;
-    margin: 0 auto;
-    padding-top: 5px;
+.price {
+    text-align:center;
+    font-size:20px;
 }
-
-
-/*property for the bootstrap panel*/
-
 .panel {
-    -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-    display: block;
+    max-height:50%;
 }
-
-.panel-body .input-group {
-    float: none;
-    width: 100%;
+.panel-footer {   
+   text-align: center;
+   background: white; 
 }
-
-.col-sm-6 {
-    width: 50%;
-    margin-left: 25%;
+.btn-buy {
+    font-size:12px;   
 }
-
-.panel-default>.panel-heading {
-    color: #000 !important;
-    background: #80bfff;
-    /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left top, #80bfff, #ffffff);
-    /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #80bfff, #ffffff);
-    /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #80bfff, #ffffff);
-    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, #80bfff, #ffffff);
-    /* Standard syntax */
-    border-color: #99ccff !important;
-    height: 80px;
-}
-
-
-/*property for the HTML input placeholder*/
-
-input:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
-input:focus:-moz-placeholder {
-    color: transparent;
-}
-
-
-/* FF 4-18 */
-
-input:focus::-moz-placeholder {
-    color: transparent;
-}
-
-
-/* FF 19+ */
-
-input:focus::-moz-placeholder {
-    color: transparent;
-}
-
-
-/* FF 19+ */
-
-input:focus:-ms-input-placeholder {
-    color: transparent;
-}
-
-
-/* IE 10+ */
-
-
-/*property for reset button*/
-
-button[type="reset"] {
-    background-color: transparent;
-    border: 1px solid black;
-}
-
-
-/*Glyphicon color*/
-
-.blue {
-    color: #80bfff;
-}
-
-.footer {
-    background-color: white;
+.btn-fa {
+    font-size:12px;   
 }
