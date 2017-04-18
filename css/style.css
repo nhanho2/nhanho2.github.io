@@ -1,5 +1,6 @@
 body {
     background: #dddddd;
+    font-family: arial;
 }
 
 .navbar {
@@ -57,16 +58,28 @@ body {
 .recommend {
     text-align: center;
     cursor: pointer;
+    padding-top: 15px;
+    background-color: white;
+    margin: 0px;
 }
 
 .categogies {
     text-align: center;
 }
 
-.categogies h2 {
+.block-title {
     background-color: #337ab7;
-    color: white;
+    margin-top: 0px;
     margin-bottom: 0px;
+    padding-top: 15px;
+    padding: 15px;
+    color: white;
+}
+
+.products {
+    padding-top: 15px;
+    background-color: white;
+    margin: 0px;
 }
 
 .glyphicon-star {
@@ -156,14 +169,11 @@ textarea {
 }
 
 .btn-add {
-    width: 100%;
-    font-size: 16px;
+    width: 33%;
 }
 
 .btn-faa {
-    width: 100%;
-    font-size: 16px;
-    margin-top: 10px;
+    width: 33%;
 }
 
 .col-sm-4 {
@@ -210,10 +220,6 @@ textarea {
 
 h3 {
     line-height: 100%;
-}
-
-.col-sm-9 {
-    background-color: white;
 }
 
 .product h2 {
@@ -325,22 +331,10 @@ footer {
     color: white;
 }
 
-table {
-    width: 100%;
-}
-
 .product-cart-img {
     max-width: 30%;
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-tr {
-    border-bottom: 1px solid #dfdfdf;
-}
-
-.cal-step {
-    border-bottom: none;
 }
 
 .admin {
