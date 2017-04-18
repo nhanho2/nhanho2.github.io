@@ -16,9 +16,14 @@ body {
 .input-group-addon {
     border: none;
     background: white;
-    border-radius:0px;
+    border-radius: 0px;
 }
-.search-text {border-radius:0px;border:none;}
+
+.search-text {
+    border-radius: 0px;
+    border: none;
+}
+
 #search {
     border: none;
     background: white;
@@ -58,7 +63,11 @@ body {
     text-align: center;
 }
 
-.categogies h2 {background-color:#337ab7;color:white;margin-bottom: 0px;}
+.categogies h2 {
+    background-color: #337ab7;
+    color: white;
+    margin-bottom: 0px;
+}
 
 .glyphicon-star {
     font-size: 15px;
@@ -69,35 +78,42 @@ body {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+
 .list-group-item-heading {
-    margin-bottom:0px;
+    margin-bottom: 0px;
 }
+
 .list-group-item {
-    border:none;
+    border: none;
 }
+
 .list-group-item:last-child {
     margin-bottom: 0;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-.list-group-item.active {
-    background-color:#80ffff;
-    color:#970000;
-    border:none;
 
+.list-group-item.active {
+    background-color: #80ffff;
+    color: #970000;
+    border: none;
 }
+
 .list-group-item.active:hover {
- background-color:#80ffff;
-    color:#970000;
-    border:none;
+    background-color: #80ffff;
+    color: #970000;
+    border: none;
 }
+
 .quantity {
     width: 15%;
-    margin-left:10px;
+    margin-left: 10px;
 }
-textarea{
-    width:100%;
+
+textarea {
+    width: 100%;
 }
+
 .rating {
     text-align: center;
 }
@@ -143,11 +159,13 @@ textarea{
     width: 100%;
     font-size: 16px;
 }
+
 .btn-faa {
     width: 100%;
     font-size: 16px;
-    margin-top:10px;
+    margin-top: 10px;
 }
+
 .col-sm-4 {
     text-align: center;
     display: block;
@@ -297,42 +315,62 @@ footer {
 .book-img {
     max-width: 100%;
 }
+
 .cart {
     background-color: white;
 }
+
 .cart h2 {
-     background-color: #337ab7;
-     color:white;
+    background-color: #337ab7;
+    color: white;
 }
+
 table {
-    width:100%;
+    width: 100%;
 }
+
 .product-cart-img {
-    max-width:30%;
-    margin-top:5px;
-    margin-bottom:5px;
+    max-width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
 tr {
     border-bottom: 1px solid #dfdfdf;
 }
+
 .cal-step {
-    border-bottom:none;
+    border-bottom: none;
 }
+
 .admin {
     background-color: white;
-    padding:10px;   
+    padding: 10px;
 }
-.admin input { border-radius:0px;}
+
+.admin input {
+    border-radius: 0px;
+}
+
 .admin h2 {
-     background-color: #337ab7;
-     color:white;
-     margin: -10px -10px 10px -10px;
+    background-color: #337ab7;
+    color: white;
+    margin: -10px -10px 10px -10px;
 }
+
 input[type="file"] {
     display: none;
 }
+
+.custom-file-upload {
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+    background-color: #c4c4c4;
+    padding: 5px;
+}
+
 select {
-    border:none;
+    border: none;
     border-bottom: 1px solid #919191;
     cursor: pointer;
 }
