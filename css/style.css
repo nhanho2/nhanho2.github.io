@@ -16,8 +16,9 @@ body {
 .input-group-addon {
     border: none;
     background: white;
+    border-radius:0px;
 }
-
+.search-text {border-radius:0px;border:none;}
 #search {
     border: none;
     background: white;
@@ -53,11 +54,11 @@ body {
     cursor: pointer;
 }
 
-.catalogies {
+.categogies {
     text-align: center;
 }
 
-.catalogies h2 {background-color:#337ab7;color:white;margin-bottom: 0px;}
+.categogies h2 {background-color:#337ab7;color:white;margin-bottom: 0px;}
 
 .glyphicon-star {
     font-size: 15px;
@@ -316,4 +317,22 @@ tr {
 }
 .cal-step {
     border-bottom:none;
+}
+.admin {
+    background-color: white;
+    padding:10px;   
+}
+.admin input { border-radius:0px;}
+.admin h2 {
+     background-color: #337ab7;
+     color:white;
+     margin: -10px -10px 10px -10px;
+}
+input[type="file"] {
+    display: none;
+}
+select {
+    border:none;
+    border-bottom: 1px solid #919191;
+    cursor: pointer;
 }
