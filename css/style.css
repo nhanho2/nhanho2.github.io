@@ -63,10 +63,6 @@ body {
     margin: 0px;
 }
 
-.categogies {
-    text-align: center;
-}
-
 .block-title {
     background-color: #337ab7;
     margin-top: 0px;
@@ -107,16 +103,16 @@ body {
 }
 
 .list-group-item.active {
-    background-color: #80ffff;
+background-color:#eeeeee;
     color: #970000;
-    border: none;
+    border-left: 3px solid  #970000;;
+}
+.list-group-item.active:hover {
+    background-color:#eeeeee;
+    color: #970000;
+    border-left: 3px solid  #970000;;
 }
 
-.list-group-item.active:hover {
-    background-color: #80ffff;
-    color: #970000;
-    border: none;
-}
 
 .quantity {
     width: 15%;
@@ -169,11 +165,11 @@ textarea {
 }
 
 .btn-add {
-    width: 33%;
+    width: 100%;
 }
 
 .btn-faa {
-    width: 33%;
+    width: 100%;
 }
 
 .col-sm-4 {
@@ -321,7 +317,10 @@ footer {
 .book-img {
     max-width: 100%;
 }
-
+.main-detail {
+    background-color: white;
+    margin:0px;
+}
 .cart {
     background-color: white;
 }
