@@ -7,6 +7,11 @@ body {
     border-radius: 0px;
 }
 
+.navbar-inverse {
+    background-color: #337ab7;
+    border: none;
+}
+
 .navbar-brand .logo {
     display: inline;
     max-width: 50px;
@@ -20,6 +25,14 @@ body {
     border-radius: 0px;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #9d0000;
+}
+
 .search-text {
     border-radius: 0px;
     border: none;
@@ -28,6 +41,10 @@ body {
 #search {
     border: none;
     background: white;
+}
+
+.user-cart {
+    font-size: 15px;
 }
 
 .carousel-inner img {
@@ -72,6 +89,10 @@ body {
     color: white;
 }
 
+.block-contact {
+    text-align: center;
+}
+
 .products {
     padding-top: 15px;
     background-color: white;
@@ -106,14 +127,16 @@ body {
     background-color: #eeeeee;
     color: #970000;
     border-left: 3px solid #970000;
-    ;
 }
 
 .list-group-item.active:hover {
     background-color: #eeeeee;
     color: #970000;
     border-left: 3px solid #970000;
-    ;
+}
+
+a.list-group-item:hover {
+    color: #970000;
 }
 
 .quantity {
@@ -131,12 +154,15 @@ textarea {
 .price {
     text-align: center;
     font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .book-name {
     line-height: 2.5ex;
     height: 7.5ex;
     overflow: hidden;
+    text-align: center;
 }
 
 .panel {
@@ -152,6 +178,7 @@ textarea {
     text-align: center;
     background: white;
     padding: 10px;
+    margin-top: -10px;
 }
 
 .btn {
@@ -178,6 +205,15 @@ textarea {
     margin: 20%;
 }
 
+.btn-cmt {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.btn-log {
+    margin-bottom: 10px;
+}
+
 .col-sm-4 {
     text-align: center;
     display: block;
@@ -190,6 +226,7 @@ textarea {
 .main {
     max-width: 320px;
     margin: 0 auto;
+    background-color: white;
 }
 
 .login-or {
@@ -328,6 +365,10 @@ footer {
     text-align: center;
 }
 
+.detail-img {
+    margin-top: 10%;
+}
+
 .main-detail {
     background-color: white;
     margin: 0px;
@@ -343,10 +384,10 @@ footer {
 }
 
 .cart-img {
-    max-width: 30%;
+    max-width: 50%;
     margin-top: 5%;
     margin-bottom: 5%;
-    margin-left: 34%;
+    margin-left: 26%;
 }
 
 .cart-detail {
