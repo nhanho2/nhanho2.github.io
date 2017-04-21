@@ -42,11 +42,19 @@ body {
     border: none;
     background: white;
 }
-
-.user-cart {
-    font-size: 15px;
+.popup {
+    width:500px;
 }
-
+.form-control {
+    border-radius: 0px;
+}
+.user-cart {
+    font-size: 20px;
+}
+.navbar-inverse .navbar-nav .open a:hover, .navbar-inverse .navbar-nav .open a:focus {
+    background-color: transparent;
+    color:#9d0000;
+}
 .carousel-inner img {
     width: 100%;
     /* Set width to 100% */
@@ -223,12 +231,18 @@ textarea {
     text-align: justify;
 }
 
-.main {
+.login-form {
     max-width: 320px;
     margin: 0 auto;
-    background-color: white;
 }
-
+.block-login {
+    text-align: center;
+}
+.login-input {
+    background-color: white;
+    border:1px solid #337ab7;
+    padding:15px;
+}
 .login-or {
     position: relative;
     font-size: 18px;

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
     <link rel="shortcut icon" href="css/icon.png" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
@@ -23,7 +24,8 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#"><img class="logo" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdJ19RSKvbFBrIE8qmebe8EX0fj1AdDSbQwmDMK8VmoKBkeZIi" alt=""></a>
+                <a class="navbar-brand" href="#"><img class="logo" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdJ19RSKvbFBrIE8qmebe8EX0fj1AdDSbQwmDMK8VmoKBkeZIi"
+                        alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -46,8 +48,46 @@
                         </form>
                     </li>
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart user-cart"></span></a></li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
+                        </a>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">                                  
+                                    <div class="modal-body">
+                                        <button type="button" class="close" data-dismiss="modal">x</button>
+                                        <div class="container popup">                                             
+                                            <h3 class="block-title block-login">Đăng Nhập</h3>
+                                            <div class="login-input">
+                                                hoặc <a href="#">Đăng ký</a>
+                                                <form role="form">
+                                                    <div class="form-group">
+                                                        <label for="inputUsernameEmail">Tên đăng nhập, hoặc email</label>
+                                                        <input type="text" class="form-control" id="inputUsernameEmail">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <a class="pull-right" href="#">Quên mật khẩu?</a>
+                                                        <label for="inputPassword">Mật khẩu</label>
+                                                        <input type="password" class="form-control" id="inputPassword">
+                                                    </div>
+                                                    <div class="checkbox pull-right">
+                                                        <label>
+                                                            <input type="checkbox"/>
+                                                             Lưu tài khoản
+                                                        </label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn btn-primary btn-log">Đăng Nhập</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#" class="dropdown-toggle open" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> Xin chào, Nhan Ho <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
@@ -107,7 +147,7 @@
         <div class="row">
             <!--SideBar-->
             <div class="col-sm-3 sidebar">
-                <h4 class="block-title">CATEGOGIES</h4>
+                <h4 class="block-title">DANH MỤC</h4>
                 <div class="list-group wizard-menu">
                     <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
                         <span>Truyện Comic</span>
@@ -443,14 +483,11 @@
         </div>
     </div>
     <!--End Main Content-->
-    <div class="container">
-        <hr>
-    </div>
     <!--Detail Page-->
     <div class="container">
         <div class="row">
             <div class="col-sm-3 sidebar">
-                <h4 class="block-title">CATEGOGIES</h4>
+                <h4 class="block-title">DANH MỤC</h4>
                 <div class="list-group wizard-menu">
                     <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
                         <span>Truyện Comic</span>
@@ -484,9 +521,13 @@
                         <h2><strong>City of Wolves</strong></h2>
                         <h5>Tác giả <a href="" class="author">Nhan Ho</a></h5>
                         <hr>
-                        <p>Alexander Drake, Investigator for Hire, doesn’t like working for the Nobility, and doesn’t prefer to take jobs from strange men who accost him in alleyways. A combination of hired muscle and ready silver have a way of changing
-                            a man’s mind. A lord has been killed, his body found covered in bite marks. Even worse, the late lord’s will is missing, and not everyone wants Drake to find it. Solving the case might plunge Drake into deeper danger. City
-                            of Wolves is a gaslamp fantasy noir from debut author Willow Palecek. At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.
+                        <p>Alexander Drake, Investigator for Hire, doesn’t like working for the Nobility, and doesn’t prefer
+                            to take jobs from strange men who accost him in alleyways. A combination of hired muscle and
+                            ready silver have a way of changing a man’s mind. A lord has been killed, his body found covered
+                            in bite marks. Even worse, the late lord’s will is missing, and not everyone wants Drake to find
+                            it. Solving the case might plunge Drake into deeper danger. City of Wolves is a gaslamp fantasy
+                            noir from debut author Willow Palecek. At the Publisher's request, this title is being sold without
+                            Digital Rights Management Software (DRM) applied.
                         </p>
                         <hr>
                         <div>
@@ -524,10 +565,9 @@
         <!--Login Page-->
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-centered main">
-                    <h3 class="block-title">Đăng nhập</h3>
-
-                    <div>
+                <div class="col-md-6 col-centered login-form">
+                    <h3 class="block-title block-login">Đăng Nhập</h3>
+                    <div class="login-input">
                         hoặc <a href="#">Đăng ký</a>
                         <form role="form">
                             <div class="form-group">
@@ -545,7 +585,7 @@
                             Lưu tài khoản
                         </label>
                             </div>
-                            <button type="submit" class="btn btn btn-primary btn-log">Đăng nhập</button>
+                            <button type="submit" class="btn btn btn-primary btn-log">Đăng Nhập</button>
                         </form>
                     </div>
                 </div>
@@ -558,14 +598,14 @@
                 <div class="col-sm-6 col-centered">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="block-title block-contact">Contact Us</h3>
+                            <h3 class="block-title block-contact">Liên Hệ</h3>
                         </div>
                         <form action="" method="POST">
                             <div class="panel-body">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
-                                        <input type="text" name="InputName" placeholder="Name" class="form-control" required>
+                                        <input type="text" name="InputName" placeholder="Họ Tên" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -577,13 +617,14 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
-                                        <input type="number" name="InputCno" placeholder="Phone" class="form-control" required>
+                                        <input type="number" name="InputCno" placeholder="Số điện thoại" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
-                                        <textarea name="InputMessage" rows="6" class="form-control" type="text" required></textarea>
+                                        <textarea name="InputMessage" rows="6" class="form-control" type="text" placeholder="Lời nhắn" onfocus="placeholder=''" onblur="placeholder='Lời nhắn'"
+                                            required></textarea>
                                     </div>
                                 </div>
                                 <div>
@@ -698,10 +739,8 @@
             <div class="row">
                 <div class="col-sm-8"></div>
                 <div class="col-sm-4 pay-step">
-                    <span class="pull-left"><button class="btn btn-basic"><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</button>
-                    </span>
-                    <span class="pull-right"><button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Confirm</button>
-                    </span>
+                    <button class="btn btn-basic"><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</button>
+                    <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Confirm</button>
                 </div>
             </div>
         </div>
