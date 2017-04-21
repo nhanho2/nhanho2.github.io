@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="shortcut icon" href="css/icon.png" />
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
@@ -24,8 +23,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="#"><img class="logo" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdJ19RSKvbFBrIE8qmebe8EX0fj1AdDSbQwmDMK8VmoKBkeZIi"
-                        alt=""></a>
+                <a class="navbar-brand" href="#"><img class="logo" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQdJ19RSKvbFBrIE8qmebe8EX0fj1AdDSbQwmDMK8VmoKBkeZIi" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
@@ -47,17 +45,47 @@
                             </div>
                         </form>
                     </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart user-cart"></span></a></li>
+                    <li class="dropdown cart-drop">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-shopping-cart user-cart"></span>
+                            <span class="badge">2</span>
+                            <span class="caret"></span>
+                        </a>
+                        <div class="dropdown-content cart-drop-content">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51l9jVAk1uL._AC_US160_.jpg" class="img-responsive cart-item-img" alt="The Collapsing Empire"></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5 class="price-item">10.000 VND</h5>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51KtxvROG5L._AC_US160_.jpg" class="img-responsive cart-item-img" alt="City of Wolves"></a>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5 class="price-item">10.000 VND</h5>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal">
                             <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
                         </a>
                         <div class="modal fade" id="myModal" role="dialog">
                             <div class="modal-dialog">
-                                <div class="modal-content">                                  
+                                <div class="modal-content">
                                     <div class="modal-body">
-                                        <button type="button" class="close" data-dismiss="modal">x</button>
-                                        <div class="container popup">                                             
+                                        <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <div class="container popup">
                                             <h3 class="block-title block-login">Đăng Nhập</h3>
                                             <div class="login-input">
                                                 hoặc <a href="#">Đăng ký</a>
@@ -86,16 +114,15 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown user-drop">
                         <a href="#" class="dropdown-toggle open" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> Xin chào, Nhan Ho <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-file"></span> Hồ sơ</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</span></a></li>
-                            <li class="divider"></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-off"></span> Đăng xuất</span></a></li>
-                        </ul>
+                        <div class="dropdown-content user-drop-content">
+                            <a href="#"><span class="glyphicon glyphicon-file"></span> Hồ sơ</a>
+                            <a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</span></a>
+                            <a href="#"><span class="glyphicon glyphicon-off"></span> Đăng xuất</span></a>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -521,13 +548,9 @@
                         <h2><strong>City of Wolves</strong></h2>
                         <h5>Tác giả <a href="" class="author">Nhan Ho</a></h5>
                         <hr>
-                        <p>Alexander Drake, Investigator for Hire, doesn’t like working for the Nobility, and doesn’t prefer
-                            to take jobs from strange men who accost him in alleyways. A combination of hired muscle and
-                            ready silver have a way of changing a man’s mind. A lord has been killed, his body found covered
-                            in bite marks. Even worse, the late lord’s will is missing, and not everyone wants Drake to find
-                            it. Solving the case might plunge Drake into deeper danger. City of Wolves is a gaslamp fantasy
-                            noir from debut author Willow Palecek. At the Publisher's request, this title is being sold without
-                            Digital Rights Management Software (DRM) applied.
+                        <p>Alexander Drake, Investigator for Hire, doesn’t like working for the Nobility, and doesn’t prefer to take jobs from strange men who accost him in alleyways. A combination of hired muscle and ready silver have a way of changing
+                            a man’s mind. A lord has been killed, his body found covered in bite marks. Even worse, the late lord’s will is missing, and not everyone wants Drake to find it. Solving the case might plunge Drake into deeper danger. City
+                            of Wolves is a gaslamp fantasy noir from debut author Willow Palecek. At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.
                         </p>
                         <hr>
                         <div>
@@ -623,8 +646,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
-                                        <textarea name="InputMessage" rows="6" class="form-control" type="text" placeholder="Lời nhắn" onfocus="placeholder=''" onblur="placeholder='Lời nhắn'"
-                                            required></textarea>
+                                        <textarea name="InputMessage" rows="6" class="form-control" type="text" placeholder="Lời nhắn" onfocus="placeholder=''" onblur="placeholder='Lời nhắn'" required></textarea>
                                     </div>
                                 </div>
                                 <div>

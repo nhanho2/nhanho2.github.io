@@ -42,19 +42,94 @@ body {
     border: none;
     background: white;
 }
-.popup {
-    width:500px;
+
+.user-drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    margin-top: 0px;
 }
+
+.user-drop-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #337ab7;
+}
+
+.user-drop-content a:hover {
+    color: #9d0000;
+    border-left: 3px solid #9d0000;
+}
+
+.user-drop:hover .user-drop-content {
+    display: block;
+}
+
+.cart-drop-content {
+    display: none;
+    position: absolute;
+    background-color: #337ab7;
+    min-width: 300px;
+    z-index: 1;
+    margin-top: 0px;
+}
+
+.cart-drop-content a {
+    float: none;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #337ab7;
+}
+
+.cart-drop:hover .cart-drop-content {
+    display: block;
+}
+
+.cart-item-img {
+    max-width: 80%;
+}
+
+.badge {
+    background-color: #337ab7;
+}
+
+.badge:hover {
+    color: #9d0000;
+}
+
+.price-item {
+    background-color: #337ab7;
+    color: white;
+    margin-top: 20px;
+}
+
+.popup {
+    width: 500px;
+}
+
 .form-control {
     border-radius: 0px;
 }
+
 .user-cart {
     font-size: 20px;
 }
-.navbar-inverse .navbar-nav .open a:hover, .navbar-inverse .navbar-nav .open a:focus {
+
+.navbar-inverse .navbar-nav .open a:hover,
+.navbar-inverse .navbar-nav .open a:focus {
     background-color: transparent;
-    color:#9d0000;
+    color: #9d0000;
 }
+
 .carousel-inner img {
     width: 100%;
     /* Set width to 100% */
@@ -213,6 +288,10 @@ textarea {
     margin: 20%;
 }
 
+.btn-remove-item {
+    margin-top: 15px;
+}
+
 .btn-cmt {
     float: right;
     margin-bottom: 10px;
@@ -235,14 +314,17 @@ textarea {
     max-width: 320px;
     margin: 0 auto;
 }
+
 .block-login {
     text-align: center;
 }
+
 .login-input {
     background-color: white;
-    border:1px solid #337ab7;
-    padding:15px;
+    border: 1px solid #337ab7;
+    padding: 15px;
 }
+
 .login-or {
     position: relative;
     font-size: 18px;
