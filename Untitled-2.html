@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The House of Books</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="css/icon.png" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+</head>
+
+<body ng-app="myApp">
+    <!--Admin Page-->
+    <div class="container" ng-controller="AdminController" id="Untitled-2.html">
+        <div class="row">
+            <div class="col-sm-6 col-centered">
+                <h4 class="block-title">Adding your book</h2>
+                    <div class="admin">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="bookTitle">Title</label>
+                                <input type="text" class="form-control" id="bookTitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookAuthor">Author</label>
+                                <input type="text" class="form-control" id="bookAuthor">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookDescription">Description</label>
+                                <input type="text" class="form-control" id="bookDescription">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookPrice">Price</label>
+                                <input type="text" class="form-control" id="bookPrice">
+                            </div>
+                        </form>
+
+                        <label class="custom-file-upload">                               
+                                <input type="file"/><span class="glyphicon glyphicon-camera"></span> Upload cover
+                            </label>
+                        <h5><strong>Categogy</strong></h5>
+                        <select name="catagogy" id="">                                
+                                <option value="comic">COMIC</option>
+                                <option value="novel">NOVEL</option>
+                                <option value="fi-science">SCIENCE FICTION</option>
+                                <option value="medival">MEDIVAL</option>
+                                <option value="fantastic">FANTASTIC WORLD</option>
+                                <option value="xxx">X X X</option>
+                            </select>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--End Admin Page-->
+</body>
+
+</html>
