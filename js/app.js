@@ -1,14 +1,15 @@
-var app = angular.module('myApp', ["ngRoute"]);
+var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
-        .when("/", {
-            templateUrl: "main.html",
-            controller: "MainController"
+        .when('/', {
+            templateUrl: 'main.html',
+            controller: 'MainController'
         })
-        .when("/admin", {
-            templateUrl: "admin.html",
-            controller: "AdminController"
+        .when('/admin', {
+            templateUrl: 'admin.html',
+            controller: 'AdminController'
         })
+        .otherwise({ redirectTo: '/' });
 });
 app.controller('MainController', function() {});
 app.controller('AdminController', function() {});
