@@ -2,11 +2,11 @@ var app = angular.module('myApp', ['ngRoute']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'main.html',
+            templateUrl: 'pages/main.html',
             controller: 'MainController'
         })
         .when('/admin', {
-            templateUrl: 'admin.html',
+            templateUrl: 'pages/admin.html',
             controller: 'AdminController'
         })
         .otherwise({ redirectTo: '/' });
