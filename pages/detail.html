@@ -1,0 +1,102 @@
+<!--Detail Page-->
+<div class="container" ng-controller="bookCtrl">
+    <div class="row">
+        <div class="col-sm-3 sidebar">
+            <h4 class="block-title">DANH MỤC</h4>
+            <div class="list-group wizard-menu">
+                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
+                    <span>Truyện Comic</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Tiểu thuyết</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>viễn tưởng</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Lịch sử</span>
+                </a>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Thế giới kì diệu</span>
+                </a>
+                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                    <span>20+</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-9" data-ng-controller="detailCtrl">
+            <div class="row main-detail">
+                <div class="col-sm-4">
+                    <div class="detail-img">
+                        <img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h2><strong>{{book.title}}</strong></h2>
+                    <h5>Tác giả <a href="" class="author">{{book.author}}</a></h5>
+                    <hr>
+                    <p>{{book.fullDescription}}</p>
+                    <hr>
+                    <div>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                    <hr>
+                    <p>
+                        <strong>Số lượng:   </strong><input type="number" class="quantity" value="1" />
+                    </p>
+                    <hr>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <button class="btn btn-primary btn-add"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</button>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <button class="btn btn-danger btn-faa"><span class="glyphicon glyphicon-heart"></span>  Thêm vào mục yêu thích</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3><strong>Phản hồi</strong></h3>
+                    <hr>
+                    <textarea rows="10" cols="70" placeholder="Cho ý kiến :)" onfocus="placeholder=''" onblur="placeholder='Cho ý kiến :)'"></textarea><br>
+                    <button class="btn btn-primary btn-cmt" type="submit">Đăng</button>
+                </div>
+                <div class="container"></div>
+                <div class="row cmt-box">
+                    <div class="col-sm-3 text-center">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
+                    </div>
+                    <div class="col-sm-9 text-left">
+                        <h4>Some Bad Guy</h4>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
+                    </div>
+                </div>
+                <div class="row cmt-box">
+                    <div class="col-sm-3 text-center">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
+                    </div>
+                    <div class="col-sm-9 text-left">
+                        <h4>Some Bad Guy</h4>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--End Detail Page-->

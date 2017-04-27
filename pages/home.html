@@ -1,0 +1,191 @@
+<div class="container" ng-controller="bookCtrl">
+    <div class="row">
+        <!--SideBar-->
+        <div class="col-sm-3 sidebar">
+            <h4 class="block-title">DANH MỤC</h4>
+            <div class="list-group wizard-menu">
+                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
+                    <span>Truyện Comic</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Tiểu thuyết</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Viễn tưởng</span>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Lịch sử</span>
+                </a>
+                </a>
+                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
+                    <span>Thế giới kì diệu</span>
+                </a>
+                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
+                    <span>20+</span>
+                </a>
+            </div>
+        </div>
+        <!--End SideBar-->
+        <!--Product-->
+        <div class="col-sm-9">
+            <h4 class="block-title">SÁCH MỚI CẬP NHẬT</h4>
+            <div class="row products">
+                <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail">
+                            <br>
+                            <div class="book-name"><strong>{{book.title}}</strong></div>
+                            <p class="price"><strong>{{book.sellingPrice}}</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span><span> Mua</span></button>
+                            <button class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Product-->
+        <div class="container">
+            <hr>
+        </div>
+        <div class="container">
+            <h4 class="block-title">GỢI Ý CHO BẠN</h4>
+            <div class="row recommend">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51KtxvROG5L._AC_US160_.jpg" class="img-responsive" alt="City of Wolves">
+                            <br>
+                            <div class="book-name"><strong>City of Wolves</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/61gFHXKbRlL._AC_US160_.jpg" class="img-responsive" alt="Fates and Furies">
+                            <br>
+                            <div class="book-name"><strong>Fates and Furies Lauren Groff</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51l9jVAk1uL._AC_US160_.jpg" class="img-responsive" alt="The Collapsing Empire">
+                            <br>
+                            <div class="book-name"><strong>The Collapsing Empire</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51jqc8H9hWL._AC_US160_.jpg" class="img-responsive" alt="The secret Girlfriend">
+                            <br>
+                            <div class="book-name"><strong>The Secret Girlfriend</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51Y-fUPNSAL._AC_US160_.jpg" class="img-responsive" alt="Power Ranger">
+                            <br>
+                            <div class="book-name"><strong>Saban's Power Ranger: Aftershock</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/51jW4VbcLjL._AC_US160_.jpg" class="img-responsive" alt="Star Wars: Darth Vader Vol.1">
+                            <br>
+                            <div class="book-name" title="Star Wars: Darth Vader Vol.1: Vader (Darth Vader (2015-2016))"><strong>Star Wars: Darth Vader Vol.1: Vader (Darth Vader (2015-2016))</strong></div>
+                            <p class="price"><strong>10.000 VND</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button type="submit" class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span> Mua</button>
+                            <button title="Thích" type="submit" class="btn btn-danger btn-fa"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Main Content-->
