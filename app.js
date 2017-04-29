@@ -1,5 +1,5 @@
-var app = angular.module('myApp', ['ngRoute']);
-app.config(function($routeProvider) {
+var myApp = angular.module('myApp', ['ngRoute']);
+myApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'pages/home.html',
@@ -8,6 +8,10 @@ app.config(function($routeProvider) {
         .when('/admin', {
             templateUrl: 'pages/admin.html',
             controller: 'bookCtrl'
+        })
+        .when('/books/detail/:id', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/detail.html'
         })
         .otherwise({
             templateUrl: 'pages/home.html'

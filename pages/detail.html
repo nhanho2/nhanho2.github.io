@@ -1,5 +1,5 @@
 <!--Detail Page-->
-<div class="container" ng-controller="bookCtrl">
+<div class="container" ng-controller="bookCtrl" ng-init="getBook()">
     <div class="row">
         <div class="col-sm-3 sidebar">
             <h4 class="block-title">DANH MỤC</h4>
@@ -36,7 +36,8 @@
                     <h2><strong>{{book.title}}</strong></h2>
                     <h5>Tác giả <a href="" class="author">{{book.author}}</a></h5>
                     <hr>
-                    <p>{{book.fullDescription}}</p>
+                    <h5>Genre:<a href="">{{book.genre}}</a></h5>
+                    <p>{{book.shortDescription}}</p>
                     <hr>
                     <div>
                         <span class="glyphicon glyphicon-star"></span>
