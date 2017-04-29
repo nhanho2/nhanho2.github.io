@@ -23,9 +23,6 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
 
     $scope.addBook = function() {
         console.log($scope.book);
-
-
-
         $http.post(root + '/api/books/', $scope.book).success(function(response) {
             window.location.href = '#/books';
         });
@@ -43,4 +40,11 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             window.location.href = '#/books';
         });
     }
+    $scope.bookSearch = function() {
+        $scope.text = $routeParams.text;
+        $http.get(root + '/api/search/' + $scope.text).success(function(response) {
+            $scope.search = response;
+        });
+    }
+
 }]);

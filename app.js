@@ -13,6 +13,10 @@ myApp.config(function($routeProvider) {
             controller: 'bookCtrl',
             templateUrl: 'pages/detail.html'
         })
+        .when('/search/:text', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/search.html'
+        })
         .otherwise({
             templateUrl: 'pages/home.html'
         });

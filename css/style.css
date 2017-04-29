@@ -38,6 +38,10 @@ body {
     border: none;
 }
 
+.search-text:focus {
+    border: none;
+}
+
 #search {
     border: none;
     background: white;
@@ -201,20 +205,16 @@ body {
     margin-bottom: 0px;
 }
 
-.list-group-item {
-    border: none;
-}
-
 .list-group-item:last-child {
     margin-bottom: 0;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
 
-.list-group-item.active {
+.list-group-item {
     background-color: #eeeeee;
     color: #970000;
-    border-left: 3px solid #970000;
+    border: none;
 }
 
 .list-group-item.active:hover {
@@ -225,6 +225,7 @@ body {
 
 a.list-group-item:hover {
     color: #970000;
+    border-left: 3px solid #970000;
 }
 
 .quantity {
@@ -260,6 +261,11 @@ textarea {
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.pre-price {
+    text-decoration: line-through;
+    text-align: center;
 }
 
 .book-name {

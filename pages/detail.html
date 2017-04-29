@@ -1,43 +1,32 @@
 <!--Detail Page-->
 <div class="container" ng-controller="bookCtrl" ng-init="getBook()">
     <div class="row">
-        <div class="col-sm-3 sidebar">
+        <div class="col-sm-3 sidebar" ng-init="getGenres()">
             <h4 class="block-title">DANH MỤC</h4>
             <div class="list-group wizard-menu">
-                <a href="#" class="list-group-item active step-1-menu" data-for=".step-1">
-                    <span>Truyện Comic</span>
-                </a>
-                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
-                    <span>Tiểu thuyết</span>
-                </a>
-                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
-                    <span>viễn tưởng</span>
-                </a>
-                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
-                    <span>Lịch sử</span>
-                </a>
-                </a>
-                <a href="#" class="list-group-item step-2-menu" data-for=".step-2">
-                    <span>Thế giới kì diệu</span>
-                </a>
-                <a href="#" class="list-group-item step-3-menu" data-for=".step-3">
-                    <span>20+</span>
-                </a>
+                <a href="#" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
             </div>
         </div>
-        <div class="col-sm-9" data-ng-controller="detailCtrl">
+        <div class="col-sm-9">
             <div class="row main-detail">
                 <div class="col-sm-4">
                     <div class="detail-img">
-                        <img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail">
+                        <img ng-src="{{book.images.main}}" class="img-responsive book-img">
                     </div>
                 </div>
                 <div class="col-sm-8">
                     <h2><strong>{{book.title}}</strong></h2>
-                    <h5>Tác giả <a href="" class="author">{{book.author}}</a></h5>
+                    <h5>Tác giả: <a href="">{{book.author}}</a></h5>
                     <hr>
-                    <h5>Genre:<a href="">{{book.genre}}</a></h5>
-                    <p>{{book.shortDescription}}</p>
+                    <h5>Thể loại: <a href="">{{book.genre.name}}</a></h5>
+                    <h5>Nhà xuất bản: <a href="">{{book.publisher}}</a></h5>
+                    <h5>Số trang: {{book.pages}} trang</h5>
+                    <h5>Trọng lượng: {{book.weight}} g</h5>
+                    <hr>
+                    <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
+                    <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
+                    <hr>
+                    <p>Tóm tắt: {{book.fullDescription}}</p>
                     <hr>
                     <div>
                         <span class="glyphicon glyphicon-star"></span>

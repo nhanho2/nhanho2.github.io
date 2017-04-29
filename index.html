@@ -38,10 +38,12 @@
                     <li>
                         <form class="navbar-form navbar-right" role="search">
                             <div class="input-group">
-                                <input type="text" class="form-control search-text" placeholder="Tìm kiếm">
+                                <input type="text" ng-model="text" class="form-control search-text" placeholder="Tìm kiếm">
                                 <span class="input-group-addon">
-                            <button id="search" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
+                                <button id="search" type="submit">
+                                    <a href="#/search/{{text}}">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                </a>
                                 </button>
                                 </span>
                             </div>
