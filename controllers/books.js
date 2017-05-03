@@ -1,5 +1,3 @@
-var myApp = angular.module('myApp');
-
 myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
     console.log('bookCtrl loaded...');
     var root = 'https://green-web-bookstore.herokuapp.com';
@@ -20,7 +18,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             $scope.book = response;
         });
     }
-
+    $scope.getGenreBook = function() {
+        var id = $routeParams.id;
+        $http.get(root + '/api/books/genre/' + id).success(function(response) {
+            $scope.genreBook = response;
+        });
+    }
     $scope.addBook = function() {
         console.log($scope.book);
         $http.post(root + '/api/books/', $scope.book).success(function(response) {
@@ -40,10 +43,25 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             window.location.href = '#/books';
         });
     }
+    $scope.rate = 1;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+    $scope.hoveringOver = function(value) {
+        $scope.overStar = value;
+    };
+    $scope.ratingStates = [
+        { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' }
+    ];
     $scope.bookSearch = function() {
         $scope.text = $routeParams.text;
-        $http.get(root + '/api/search/' + $scope.text).success(function(response) {
+        $http.get(root + '/api/books/search/' + $scope.text).success(function(response) {
             $scope.search = response;
+        });
+    }
+    $scope.authorSearch = function() {
+        $scope.text = $routeParams.text;
+        $http.get(root + '/api/books/author/' + $scope.text).success(function(response) {
+            $scope.authors = response;
         });
     }
 

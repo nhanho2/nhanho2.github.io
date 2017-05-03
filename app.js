@@ -9,7 +9,19 @@ myApp.config(function($routeProvider) {
             templateUrl: 'pages/admin.html',
             controller: 'bookCtrl'
         })
+        .when('/books/category/:id', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/category.html'
+        })
         .when('/books/detail/:id', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/detail.html'
+        })
+        .when('/books/search/:id', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/detail.html'
+        })
+        .when('/books/author/:id', {
             controller: 'bookCtrl',
             templateUrl: 'pages/detail.html'
         })

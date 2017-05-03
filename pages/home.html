@@ -4,7 +4,7 @@
         <div class="col-sm-3 sidebar" ng-init="getGenres()">
             <h4 class="block-title">DANH MỤC</h4>
             <div class="list-group wizard-menu">
-                <a href="#" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
+                <a class="list-group-item" ng-repeat="genre in genres" href="#/books/category/{{genre._id}}">{{genre.name}}</a>
             </div>
         </div>
         <!--End SideBar-->
