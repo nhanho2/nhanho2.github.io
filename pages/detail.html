@@ -1,5 +1,5 @@
 <!--Detail Page-->
-<div class="container" ng-controller="bookCtrl" ng-init="getBook()">
+<div class="container" ng-init="getBook()">
     <div class="row">
         <div class="col-sm-3 sidebar" ng-init="getGenres()">
             <h4 class="block-title">DANH MỤC</h4>
@@ -16,17 +16,15 @@
                 </div>
                 <div class="col-sm-8">
                     <h2><strong>{{book.title}}</strong></h2>
-                    <h5>Tác giả: <a href="">{{book.author}}</a></h5>
+                    <h5>Tác giả: <a href="#/books/author/{{book.author}}">{{book.author}}</a></h5>
                     <hr>
-                    <h5>Thể loại: <a href="">{{book.genre.name}}</a></h5>
+                    <h5>Thể loại: <a href="#/books/category/{{book.genre._id}}">{{book.genre.name}}</a></h5>
                     <h5>Nhà xuất bản: <a href="">{{book.publisher}}</a></h5>
                     <h5>Số trang: {{book.pages}} trang</h5>
                     <h5>Trọng lượng: {{book.weight}} g</h5>
                     <hr>
                     <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
                     <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
-                    <hr>
-                    <p>Tóm tắt: {{book.fullDescription}}</p>
                     <hr>
                     <p>
                         <strong>Số lượng:   </strong><input type="number" class="quantity" value="1" />
@@ -42,6 +40,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-12">
+                    <hr>
+                    <p class="full-description"><strong>Nội dung chính:</strong> {{book.fullDescription}}</p>
                     <hr>
                     <h3><strong>Phản hồi</strong></h3>
                     <h5>Đánh giá
@@ -49,40 +51,38 @@
                         <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
                     </h5>
                     <hr>
-                    <textarea rows="10" cols="70" placeholder="Cho ý kiến :)" onfocus="placeholder=''" onblur="placeholder='Cho ý kiến :)'"></textarea><br>
+                    <textarea rows="10" cols="70" placeholder="Cho ý kiến cái đi :)" onfocus="placeholder=''" onblur="placeholder='Cho ý kiến cái đi :)'"></textarea><br>
                     <button class="btn btn-primary btn-cmt" type="submit">Đăng</button>
-                </div>
-                <div class="container"></div>
-                <div class="row cmt-box">
-                    <div class="col-sm-3 text-center">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
+                    <div class="container"></div>
+                    <div class="row cmt-box">
+                        <div class="col-sm-3 text-center">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
+                        </div>
+                        <div class="col-sm-9 text-left">
+                            <h4>Some Bad Guy</h4>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
+                        </div>
                     </div>
-                    <div class="col-sm-9 text-left">
-                        <h4>Some Bad Guy</h4>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
-                    </div>
-                </div>
-                <div class="row cmt-box">
-                    <div class="col-sm-3 text-center">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
-                    </div>
-                    <div class="col-sm-9 text-left">
-                        <h4>Some Bad Guy</h4>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
+                    <div class="row cmt-box">
+                        <div class="col-sm-3 text-center">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuov0hjAV3bvWBIgz7sKmhKzQDVfclCl6lExrWtCylBod9DQ-5" class="img-responsive cmt-img">
+                        </div>
+                        <div class="col-sm-9 text-left">
+                            <h4>Some Bad Guy</h4>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <p class="cmt">Test Comment, Complaint, Trash talk, etc...</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-    <!--End Detail Page-->
+        <!--End Detail Page-->

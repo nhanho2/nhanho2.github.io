@@ -9,15 +9,15 @@
         </div>
         <!--End SideBar-->
         <!--Product-->
-        <div class="col-sm-9" ng-init="bookSearch()">
-            <h4 class="block-title">Kết quả tìm kiếm cho "{{text}}"</h4>
+        <div class="col-sm-9" ng-init="getBooksByAuthor()">
+            <h4 class="block-title">Danh sách tác phẩm của "{{text}}"</h4>
             <div class="row products">
-                <div ng-repeat="book in search" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="panel panel-primary">
                         <div class="panel-body">
-                            <a href="#/books/author/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
+                            <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
                             <br>
-                            <div class="book-name"><a href="#/books/author/{{book._id}}"><strong>{{book.title}}</strong></a></div>
+                            <div class="book-name"><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
                             <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
                             <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
                             <div class="rating">

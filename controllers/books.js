@@ -53,16 +53,21 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' }
     ];
     $scope.bookSearch = function() {
-        $scope.text = $routeParams.text;
+        $scope.text = $routeParams.keyword;
         $http.get(root + '/api/books/search/' + $scope.text).success(function(response) {
-            $scope.search = response;
+            $scope.books = response;
         });
     }
-    $scope.authorSearch = function() {
-        $scope.text = $routeParams.text;
+    $scope.getBooksByGenre = function() {
+        $scope.text = $routeParams.id;
+        $http.get(root + '/api/books/genre/' + $scope.text).success(function(response) {
+            $scope.books = response;
+        });
+    }
+    $scope.getBooksByAuthor = function() {
+        $scope.text = $routeParams.name;
         $http.get(root + '/api/books/author/' + $scope.text).success(function(response) {
-            $scope.authors = response;
+            $scope.books = response;
         });
     }
-
 }]);

@@ -17,15 +17,11 @@ myApp.config(function($routeProvider) {
             controller: 'bookCtrl',
             templateUrl: 'pages/detail.html'
         })
-        .when('/books/search/:id', {
+        .when('/books/author/:name', {
             controller: 'bookCtrl',
-            templateUrl: 'pages/detail.html'
+            templateUrl: 'pages/authorBook.html'
         })
-        .when('/books/author/:id', {
-            controller: 'bookCtrl',
-            templateUrl: 'pages/detail.html'
-        })
-        .when('/search/:text', {
+        .when('/search/:keyword', {
             controller: 'bookCtrl',
             templateUrl: 'pages/search.html'
         })

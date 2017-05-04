@@ -223,6 +223,12 @@ body {
     border-left: 3px solid #970000;
 }
 
+.list-group-item.active {
+    background-color: #eeeeee;
+    color: #970000;
+    border-left: 3px solid #970000;
+}
+
 a.list-group-item:hover {
     color: #970000;
     border-left: 3px solid #970000;
@@ -230,6 +236,10 @@ a.list-group-item:hover {
 
 .quantity {
     width: 10%;
+}
+
+.full-description {
+    text-align: justify;
 }
 
 textarea {
@@ -336,9 +346,11 @@ textarea {
 .col-sm-8 p {
     text-align: justify;
 }
+
 .modal-content {
     border-radius: 0px;
 }
+
 .login-form {
     max-width: 320px;
     margin: 0 auto;
