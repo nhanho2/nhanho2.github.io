@@ -336,7 +336,9 @@ textarea {
 .col-sm-8 p {
     text-align: justify;
 }
-
+.modal-content {
+    border-radius: 0px;
+}
 .login-form {
     max-width: 320px;
     margin: 0 auto;
