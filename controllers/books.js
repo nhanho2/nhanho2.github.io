@@ -70,4 +70,22 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             $scope.books = response;
         });
     }
+    $scope.user = {
+        'userName':'Nhan Fisher',
+        'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'
+    }
+    // $scope.comment = {};
+    // $scope.addComment = function(post) {
+    //     $scope.comment.date = Date.now();
+    //     $scope.comment.userName = $scope.user.userName;
+    //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
+    //     post.comments.push($scope.comment);
+    //     var req = {
+    //         method: 'PUT',
+    //         url: bookservice.getBook + $routeParams.itemId,
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         data: post
+    //     }
 }]);

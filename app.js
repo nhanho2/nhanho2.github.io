@@ -1,5 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
-myApp.config(function($routeProvider) {
+myApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'pages/home.html',
@@ -24,7 +24,7 @@ myApp.config(function($routeProvider) {
         .when('/search/:keyword', {
             controller: 'bookCtrl',
             templateUrl: 'pages/search.html'
-        })
+        })     
         .otherwise({
             templateUrl: 'pages/home.html'
         });
