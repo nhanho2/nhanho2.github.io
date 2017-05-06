@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="shortcut icon" href="css/icon.png" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">  
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 
 <body ng-app='myApp'>
@@ -30,20 +30,25 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#/">Trang chủ</a></li>
-                    <li><a href="#admin">Admin</a></li>
+                    <li class="dropdown admin-drop">
+                        <a href="#admin">Admin</a>
+                        <div class="dropdown-content admin-drop-content">
+                            <a href="#admin">Adding book</a>
+                            <a href="#admin_edit">Editing book</a>
+                        </div>
+                    </li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-controller="bookCtrl">
                     <li>
-                        <form class="navbar-form navbar-right" role="search">
+                        <form class="navbar-form navbar-right" role="search" ng-submit="submitSearch()">
                             <div class="input-group">
                                 <input type="text" ng-model="text" class="form-control search-text" placeholder="Tìm kiếm">
                                 <span class="input-group-addon">
-                                <button id="search" type="submit">
-                                    <a href="#/search/{{text}}">
+                                <button id="search" type="submit" ng-click="submitSearch()">
+                                
                                         <span class="glyphicon glyphicon-search"></span>
-                                    </a>
                                 </button>
                                 </span>
                             </div>
@@ -113,7 +118,7 @@
                                                         </label>
                                                     </div>
                                                     <button type="submit" class="btn btn btn-primary btn-log">Đăng Nhập</button>
-                                                    <br>                                           
+                                                    <br>
                                                 </form>
                                             </div>
                                         </div>
@@ -139,7 +144,7 @@
 
     <!--End Menu Bar-->
     <!--Carousel-->
-    <div class="container">
+    <div class="container" ng-init="getBanner()">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -148,20 +153,7 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
-                    <div class="carousel-caption">
-                        <h3>Sell $</h3>
-                        <p>Money Money.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
-                    <div class="carousel-caption">
-                        <h3>More Sell $</h3>
-                        <p>Lorem ipsum...</p>
-                    </div>
-                </div>
+                <h2>{{banners.title}}</h2>
             </div>
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

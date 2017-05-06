@@ -98,6 +98,29 @@ body {
     display: block;
 }
 
+.admin-drop-content {
+    display: none;
+    position: absolute;
+    background-color: #337ab7;
+    min-width: 100px;
+    z-index: 1;
+    margin-top: 0px;
+}
+
+.admin-drop-content a {
+    float: none;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    background-color: #337ab7;
+}
+
+.admin-drop:hover .admin-drop-content {
+    display: block;
+}
+
 .cart-item-img {
     max-width: 80%;
 }
@@ -249,7 +272,11 @@ textarea {
 
 .cmt-img {
     width: 80%;
-    margin:2px auto 2px auto;
+    margin: 2px auto 2px auto;
+}
+
+.cmt-name {
+    margin-top: 0px;
 }
 
 .cmt {

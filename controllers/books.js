@@ -52,11 +52,15 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
     $scope.ratingStates = [
         { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' }
     ];
+    $scope.text = $routeParams.keyword;
     $scope.bookSearch = function() {
-        $scope.text = $routeParams.keyword;
         $http.get(root + '/api/books/search/' + $scope.text).success(function(response) {
             $scope.books = response;
         });
+    }
+    $scope.submitSearch = function() {
+        window.location.href = '#/search/' + $scope.text;
+        console.log('#/search/' + $scope.text)
     }
     $scope.getBooksByGenre = function() {
         $scope.text = $routeParams.id;
@@ -70,22 +74,27 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             $scope.books = response;
         });
     }
-    $scope.user = {
-        'userName':'Nhan Fisher',
-        'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'
+    $scope.getBanner = function() {
+        $http.get(root + '/api/banners/').success(function(response) {
+            $scope.banners = response;
+        });
     }
-    // $scope.comment = {};
-    // $scope.addComment = function(post) {
-    //     $scope.comment.date = Date.now();
-    //     $scope.comment.userName = $scope.user.userName;
-    //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
-    //     post.comments.push($scope.comment);
-    //     var req = {
-    //         method: 'PUT',
-    //         url: bookservice.getBook + $routeParams.itemId,
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         data: post
-    //     }
+    $scope.user = {
+            'userName': 'Nhan Fisher',
+            'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'
+        }
+        // $scope.comment = {};
+        // $scope.addComment = function(post) {
+        //     $scope.comment.date = Date.now();
+        //     $scope.comment.userName = $scope.user.userName;
+        //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
+        //     post.comments.push($scope.comment);
+        //     var req = {
+        //         method: 'PUT',
+        //         url: bookservice.getBook + $routeParams.itemId,
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         data: post
+        //     }
 }]);

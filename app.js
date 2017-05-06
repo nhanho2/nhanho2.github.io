@@ -6,7 +6,11 @@ myApp.config(function($routeProvider, $locationProvider) {
             controller: 'bookCtrl'
         })
         .when('/admin', {
-            templateUrl: 'pages/admin.html',
+            templateUrl: 'pages/admin_add.html',
+            controller: 'bookCtrl'
+        })
+        .when('/admin_edit', {
+            templateUrl: 'pages/admin_edit.html',
             controller: 'bookCtrl'
         })
         .when('/books/category/:id', {
@@ -24,7 +28,7 @@ myApp.config(function($routeProvider, $locationProvider) {
         .when('/search/:keyword', {
             controller: 'bookCtrl',
             templateUrl: 'pages/search.html'
-        })     
+        })
         .otherwise({
             templateUrl: 'pages/home.html'
         });
