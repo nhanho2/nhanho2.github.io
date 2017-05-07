@@ -144,7 +144,7 @@
 
     <!--End Menu Bar-->
     <!--Carousel-->
-    <div class="container" ng-init="getBanner()">
+    <div class="container" ng-controller="bookCtrl" ng-init="getBanner()">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -152,8 +152,14 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
             </ol>
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <h2>{{banners.title}}</h2>
+            <div class="carousel-inner" role="listbox" ng-repeat="banner in banners" index="$index">
+                <div class="item active">
+                    <img src="{{banner.imageUrl}}" alt="Image">
+                    <div class="carousel-caption">
+                        <h3>{{banner.title}}</h3>
+                        <p>Money Money.</p>
+                    </div>
+                </div>
             </div>
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
