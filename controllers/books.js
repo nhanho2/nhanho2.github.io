@@ -79,6 +79,7 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             $scope.banners = response;
         });
     }
+    $scope.myInterval = 1000;
     $scope.user = {
             'userName': 'Nhan Fisher',
             'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'

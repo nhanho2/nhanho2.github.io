@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 
-<body ng-app='myApp'>
+<body ng-app='myApp'  ng-controller="bookCtrl">
     <!--Menu Bar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -40,14 +40,13 @@
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right" ng-controller="bookCtrl">
+                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form navbar-right" role="search" ng-submit="submitSearch()">
                             <div class="input-group">
                                 <input type="text" ng-model="text" class="form-control search-text" placeholder="Tìm kiếm">
                                 <span class="input-group-addon">
-                                <button id="search" type="submit" ng-click="submitSearch()">
-                                
+                                <button id="search" type="submit" ng-submit="submitSearch()">                                
                                         <span class="glyphicon glyphicon-search"></span>
                                 </button>
                                 </span>
@@ -144,20 +143,20 @@
 
     <!--End Menu Bar-->
     <!--Carousel-->
-    <div class="container" ng-controller="bookCtrl" ng-init="getBanner()">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="container carousel">
+        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li ng-repeat="banner in banners" data-target="#myCarousel" data-slide-to="{{$index}}"></li>
             </ol>
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox" ng-repeat="banner in banners" index="$index">
-                <div class="item active">
-                    <img src="{{banner.imageUrl}}" alt="Image">
+            <div class="carousel-inner" role="listbox" ng-init="getBanner()">
+                <div class="item" ng-class="{active:!$index}" ng-repeat="banner in banners">
+                    <img ng-src="{{banner.imageUrl}}" class="img-responsive banner" alt="Image">
                     <div class="carousel-caption">
-                        <h3>{{banner.title}}</h3>
-                        <p>Money Money.</p>
+                        <h2>{{banner.title}}</h2>
+                        <h5>{{banner.description}}</h5>
+                        <h5>{{banner.createDate|date:"dd/MM/yyyy"}}</h5>
                     </div>
                 </div>
             </div>
