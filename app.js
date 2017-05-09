@@ -9,6 +9,18 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/admin_add.html',
             controller: 'bookCtrl'
         })
+        .when('/contact', {
+            templateUrl: 'pages/contact.html',
+            controller: 'bookCtrl'
+        })
+        .when('/register', {
+            templateUrl: 'pages/register.html',
+            controller: 'bookCtrl'
+        })
+        .when('/login', {
+            templateUrl: 'pages/login.html',
+            controller: 'bookCtrl'
+        })
         .when('/admin_edit', {
             templateUrl: 'pages/admin_edit.html',
             controller: 'bookCtrl'

@@ -46,7 +46,7 @@ body {
     border: none;
     background: white;
 }
-
+a:hover {text-decoration-line: none;}
 .user-drop-content {
     display: none;
     position: absolute;
@@ -379,12 +379,14 @@ textarea {
 .modal-content {
     border-radius: 0px;
 }
-
-.login-form {
-    max-width: 320px;
-    margin: 0 auto;
+.col-centered>.login-form {
+    width:70%;
+    margin: -5px auto 5px auto;
 }
 
+.register-form {
+    width:70%;
+}
 .block-login {
     text-align: center;
 }
