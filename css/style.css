@@ -46,7 +46,11 @@ body {
     border: none;
     background: white;
 }
-a:hover {text-decoration-line: none;}
+
+a:hover {
+    text-decoration-line: none;
+}
+
 .user-drop-content {
     display: none;
     position: absolute;
@@ -162,15 +166,19 @@ a:hover {text-decoration-line: none;}
     background-color: transparent;
     color: #9d0000;
 }
+
 .carousel {
     margin: -5px auto 4px auto;
 }
+
 .carousel-inner img {
     width: 100%;
     /* Set width to 100% */
     margin: auto;
     min-height: 200px;
 }
+
+
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 
 @media (max-width: 600px) {
@@ -188,12 +196,8 @@ a:hover {text-decoration-line: none;}
     cursor: pointer;
 }
 
-.recommend {
-    text-align: center;
-    cursor: pointer;
-    padding-top: 15px;
-    background-color: white;
-    margin: 0px;
+.slide {
+    margin-top: 5px;
 }
 
 .block-title {
@@ -379,14 +383,16 @@ textarea {
 .modal-content {
     border-radius: 0px;
 }
+
 .col-centered>.login-form {
-    width:70%;
+    width: 70%;
     margin: -5px auto 5px auto;
 }
 
 .register-form {
-    width:70%;
+    width: 70%;
 }
+
 .block-login {
     text-align: center;
 }

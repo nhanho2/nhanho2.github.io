@@ -21,8 +21,12 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/login.html',
             controller: 'bookCtrl'
         })
-        .when('/admin_edit', {
+        .when('/books/admin_edit/:id', {
             templateUrl: 'pages/admin_edit.html',
+            controller: 'bookCtrl'
+        })
+        .when('/cart', {
+            templateUrl: 'pages/cart.html',
             controller: 'bookCtrl'
         })
         .when('/books/category/:id', {

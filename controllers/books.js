@@ -59,7 +59,9 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         });
     }
     $scope.submitSearch = function() {
-        window.location.href = '#/search/' + $scope.text;
+        //window.location = window.location.href;
+        window.location.replace('#/search/' + $scope.text);
+        //window.location.href = '#/search/' + $scope.text;
         console.log('#/search/' + $scope.text)
     }
     $scope.getBooksByGenre = function() {

@@ -33,11 +33,14 @@
                     <hr>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-xs-12 col-md-6">
-                                <button class="btn btn-primary btn-add"><span class="glyphicon glyphicon-shopping-cart"></span> Thêm vào giỏ hàng</button>
+                            <div class="col-xs-12 col-md-4">
+                                <button class="btn btn-primary btn-add"><span class="glyphicon glyphicon-shopping-cart"></span> Mua hàng</button>
                             </div>
-                            <div class="col-xs-12 col-md-6">
-                                <button class="btn btn-danger btn-faa"><span class="glyphicon glyphicon-heart"></span>  Thêm vào mục yêu thích</button>
+                            <div class="col-xs-12 col-md-4">
+                                <a class="btn btn-primary btn-add" href="#books/admin_edit/{{book._id}}"><span class="glyphicon glyphicon-wrench"></span> Chỉnh sửa</a>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <button class="btn btn-danger btn-faa"><span class="glyphicon glyphicon-heart"></span> Yêu thích</button>
                             </div>
                         </div>
                     </div>
@@ -48,7 +51,7 @@
                     <hr>
                     <h3><strong>Phản hồi</strong></h3>
                     <h5>Đánh giá
-                        <span uib-rating ng-model="comment.rate" max="max" read-only="true"></span>
+                        <span uib-rating ng-model="comment.rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"></span>
                     </h5>
                     <hr>
                     <textarea class="form-control" rows="6" ng-model="comment.commentBody" onfocus="placeholder=''" onblur="placeholder='Cho ý kiến cái đi :)'">></textarea>
