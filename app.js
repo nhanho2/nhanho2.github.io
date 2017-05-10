@@ -5,8 +5,12 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/home.html',
             controller: 'bookCtrl'
         })
-        .when('/admin', {
+        .when('/admin_add', {
             templateUrl: 'pages/admin_add.html',
+            controller: 'bookCtrl'
+        })
+        .when('/admin_edit', {
+            templateUrl: 'pages/admin_edit.html',
             controller: 'bookCtrl'
         })
         .when('/contact', {
@@ -19,6 +23,10 @@ myApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/login', {
             templateUrl: 'pages/login.html',
+            controller: 'bookCtrl'
+        })
+        .when('/profile', {
+            templateUrl: 'pages/profile.html',
             controller: 'bookCtrl'
         })
         .when('/books/admin_edit/:id', {

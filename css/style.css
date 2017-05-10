@@ -607,3 +607,16 @@ select {
     border-bottom: 1px solid #919191;
     cursor: pointer;
 }
+.profile {
+    background-color: white;
+    margin:-10px auto 10px auto;
+}
+.profile-img {
+    max-width: 50%;
+    border-radius: 50%;
+    margin-left:24%;
+    margin-top:20px;
+}
+.profile-name {
+    text-align: center;
+}
