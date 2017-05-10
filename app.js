@@ -5,6 +5,10 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/home.html',
             controller: 'bookCtrl'
         })
+        .when('/admin', {
+            templateUrl: 'pages/admin.html',
+            controller: 'bookCtrl'
+        })
         .when('/admin_add', {
             templateUrl: 'pages/admin_add.html',
             controller: 'bookCtrl'

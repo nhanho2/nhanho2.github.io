@@ -19,6 +19,10 @@ body {
     margin-top: -17%;
 }
 
+footer {
+    margin-top: 10px;
+}
+
 .input-group-addon {
     border: none;
     background: white;
@@ -353,6 +357,16 @@ textarea {
     width: 100%;
 }
 
+.btn-edit {
+    display: inline;
+    font-size: 12px;
+    padding: 7.5px;
+}
+
+.btn-new {
+    margin-bottom: 5px;
+}
+
 .btn-remove {
     margin: 20%;
 }
@@ -607,16 +621,19 @@ select {
     border-bottom: 1px solid #919191;
     cursor: pointer;
 }
+
 .profile {
     background-color: white;
-    margin:-10px auto 10px auto;
+    margin: -10px auto 10px auto;
 }
+
 .profile-img {
     max-width: 50%;
     border-radius: 50%;
-    margin-left:24%;
-    margin-top:20px;
+    margin-left: 24%;
+    margin-top: 20px;
 }
+
 .profile-name {
     text-align: center;
 }

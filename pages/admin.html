@@ -1,0 +1,33 @@
+<div class="container" ng-init="getBooks()">
+    <div class="row">
+        <!--Product-->
+        <div class="col-sm-12">
+            <a class="btn btn-success btn-new" href="#admin_add"><span class="glyphicon glyphicon-plus"></span> Thêm sách mới</a>
+            <h4 class="block-title"><span class="glyphicon glyphicon-tasks"></span> KHO SÁCH</h4>
+            <div class="row products">
+                <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
+                            <br>
+                            <div class="book-name"><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
+                            <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
+                            <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
+                            <div class="rating">
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                                <span class="glyphicon glyphicon-star"></span>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span><span> Mua</span></button>
+                            <a class="btn btn-primary btn-edit" href="#books/admin_edit/{{book._id}}"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</a>
+                            <button class="btn btn-danger btn-fa" title="Thêm vào mục yêu thích"><span class="glyphicon glyphicon-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Product-->
