@@ -370,7 +370,9 @@ textarea {
 .btn-remove {
     margin: 20%;
 }
-
+.btn-admin-remove {
+    font-size: 12px;
+}
 .btn-remove-item {
     margin-top: 15px;
 }
