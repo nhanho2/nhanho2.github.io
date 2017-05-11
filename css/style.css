@@ -153,10 +153,6 @@ a:hover {
     margin-top: 20px;
 }
 
-.popup {
-    width: 500px;
-}
-
 .form-control {
     border-radius: 0px;
 }
@@ -335,6 +331,7 @@ textarea {
     background: white;
     padding: 10px;
     margin-top: -10px;
+    border: none;
 }
 
 .btn {
@@ -370,9 +367,18 @@ textarea {
 .btn-remove {
     margin: 20%;
 }
+
+.btn-admin-edit {
+    float: right;
+    font-size: 12px;
+    margin-right: 2%;
+}
+
 .btn-admin-remove {
     font-size: 12px;
+    float: right;
 }
+
 .btn-remove-item {
     margin-top: 15px;
 }
@@ -400,11 +406,6 @@ textarea {
     border-radius: 0px;
 }
 
-.col-centered>.login-form {
-    width: 70%;
-    margin: -5px auto 5px auto;
-}
-
 .register-form {
     width: 70%;
 }
@@ -413,10 +414,15 @@ textarea {
     text-align: center;
 }
 
-.login-input {
-    background-color: white;
+.modal-header {
+    margin-left: -1px;
+    padding: 0px;
+}
+
+.admin-list {
     border: 1px solid #337ab7;
-    padding: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 .login-or {

@@ -5,28 +5,45 @@
             <a class="btn btn-success btn-new" href="#admin_add"><span class="glyphicon glyphicon-plus"></span> Thêm sách mới</a>
             <h4 class="block-title"><span class="glyphicon glyphicon-tasks"></span> KHO SÁCH</h4>
             <div class="row products">
-                <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
-                            <br>
-                            <div class="book-name"><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
-                            <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
-                            <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
-                            <div class="rating">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
+                <div ng-repeat="book in books" class="col-sm-12">
+                    <div class="container-fluid">
+                        <div class="row admin-list">
+                            <div class="col-sm-3">
+                                <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
                             </div>
-                        </div>
-                        <div class="panel-footer">                            
-                            <a class="btn btn-primary btn-edit" href="#books/admin_edit/{{book._id}}"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</a>
-                            <button class="btn btn-danger btn-admin-remove" title="Xóa" ng-click="removeBook(book._id)"><span class="glyphicon glyphicon-trash"></span></button>
+                            <div class="col-sm-9">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
+                                        <p>{{book.shortDescription}}</p>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+
+                                    <button class="btn btn-danger btn-admin-remove" data-toggle="modal" data-target="#myModal1" title="Xóa">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                                    <a class="btn btn-primary btn-admin-edit" href="#books/admin_edit/{{book._id}}"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</a>
+                                    <div class="modal fade" id="myModal1" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="model-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove dismiss"></span></button>
+                                                    <h4 class="block-title">Xác nhận xóa</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Bạn có chắc muốn xóa ?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger btn-admin-remove" ng-click="removeBook(book._id)">Xóa</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--End Product-->
+            <!--End Product-->
