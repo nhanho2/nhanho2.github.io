@@ -22,6 +22,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         var id = $routeParams.id;
         $http.get(root + '/api/books/genre/' + id).success(function(response) {
             $scope.genreBook = response;
+            var genreName = '';
+            for (var i = 0; i < genres.length; i++) {
+                if (genres[i]._id === id) {
+                    genreName = genres[i].name;
+                }
+            }
         });
     }
     $scope.addBook = function() {
@@ -95,7 +101,6 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         opened: false
     };
     //
-    $scope.myInterval = 1000;
     $scope.user = {
             'userName': 'Nhan Fisher',
             'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'

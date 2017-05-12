@@ -51,7 +51,7 @@
                         <span uib-rating ng-model="comment.rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"></span>
                     </h5>
                     <hr>
-                    <textarea class="form-control" rows="6" ng-model="comment.commentBody" onfocus="placeholder=''" onblur="placeholder='Cho ý kiến cái đi :)'">></textarea>
+                    <div text-angular ng-model="comment.commentBody" placeholder="Ý kiến của bạn"></div>
                     <button class="btn btn-primary btn-cmt" type="submit" ng-click="comment.commentBody.length>0&&comment.rate>0?addComment(book):''">Đăng</button>
                     <div class="container-fluid"></div>
                     <div class="row cmt-box" ng-repeat="comment in book.comments">

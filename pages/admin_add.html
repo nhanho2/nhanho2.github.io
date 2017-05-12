@@ -12,7 +12,8 @@
                         </div>
                         <div class="form-group" ng-init="getGenres()">
                             <label>Danh mục</label>
-                            <select ng-model="book.genre" name="genres" ng-required="true" class="form-control" ng-options="genre as genre.name for genre in genres" />
+                            <select ng-model="book.genre" name="genres" ng-required="true" class="form-control" ng-options="genre as genre.name for genre in genres"
+                            />
                             <p ng-show="addingForm.genres.$invalid" class="text-danger"> Chưa chọn danh mục</p>
                         </div>
                         <div class="form-group">
@@ -35,31 +36,47 @@
                             <p ng-show="addingForm.pages.$error.number" class="text-danger"> Vui lòng nhập số</p>
                         </div>
                         <div class="form-group">
-                            <label>Trọng lượng (g)</label>
+                            <label>Khối lượng (g)</label>
                             <input type="number" class="form-control" name="weight" ng-model="book.weight">
                             <p ng-show="addingForm.weight.$error.number" class="text-danger"> Vui lòng nhập số</p>
                         </div>
                         <div class="form-group">
-                            <label>Khổ trang</label>
+                            <label>Chiều ngang (mm)</label>
                             <input type="number" class="form-control" name="width" ng-model="book.size.width">
                             <p ng-show="addingForm.width.$error.number" class="text-danger"> Vui lòng nhập số</p>
                         </div>
                         <div class="form-group">
+                            <label>Chiều dọc (mm)</label>
+                            <input type="number" class="form-control" name="depth" ng-model="book.size.depth">
+                            <p ng-show="addingForm.depth.$error.number" class="text-danger"> Vui lòng nhập số</p>
+                        </div>
+                        <div class="form-group">
                             <label>Ngày xuất bản</label>
                             <p class="input-group">
-                                <input class="form-control " uib-datepicker-popup="dd/MM/yyyy" ng-model="book.releaseDate" is-open="popup2.opened" datepicker-options="" close-text="Close" />
+                                <input class="form-control " uib-datepicker-popup="dd/MM/yyyy" ng-model="book.releaseDate" is-open="popup2.opened" datepicker-options=""
+                                    close-text="Close" />
                                 <span class="input-group-btn">
                                         <button type="button" class="btn btn-default btn-md" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
                                 </span>
                             </p>
                         </div>
                         <div class="form-group">
+                            <label>Ngày đăng sách</label>
+                            <p class="input-group">
+                                <input class="form-control " uib-datepicker-popup="dd/MM/yyyy" ng-model="CreateDate" is-open="popup1.opened" datepicker-options=""
+                                    close-text="Close" />
+                                <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default btn-md" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                               </span>
+                            </p>
+                        </div>
+                        <div class="form-group">
                             <label>Tóm lược</label>
-                            <textarea class="form-control" ng-model="book.shortDescription" placeholder="Tóm lược"></textarea>
+                           <div text-angular ng-model="book.shortDescription"></div>
                         </div>
                         <div class="form-group">
                             <label>Nội dung chính</label>
-                            <textarea class="form-control" ng-model="book.fullDescription" placeholder="Nội dung chính"></textarea>
+                            <div text-angular  ng-model="book.fullDescription"></div>
                         </div>
                         <div class="form-group">
                             <label>Mã Sku</label>
@@ -76,18 +93,9 @@
                             <input type="number" class="form-control" name="sellprice" ng-required="true" ng-model="book.sellingPrice">
                             <p ng-show="addingForm.sellprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
                         </div>
-                        <div class="form-group">
-                            <label>Ngày đăng sách</label>
-                            <p class="input-group">
-                                <input class="form-control " uib-datepicker-popup="dd/MM/yyyy" ng-model="CreateDate" is-open="popup1.opened" datepicker-options="" close-text="Close" />
-                                <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-md" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-                               </span>
-                            </p>
-                        </div>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> Đăng</button>
-                    </form>
-                    <a href="#admin" class="btn btn-default">Trở về</a>
+                        <a href="#admin" class="btn btn-default">Trở về</a>
+                    </form>                
                 </div>
         </div>
     </div>
