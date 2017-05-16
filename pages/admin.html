@@ -15,7 +15,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-body">
                                         <div><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
-                                        <p>{{book.shortDescription}}</p>
+                                        <div class="short-description" ng-model="book.shortDescription" ta-bind="text"></div>
                                     </div>
                                 </div>
                                 <div class="panel-footer">

@@ -12,63 +12,47 @@
         <div class="col-sm-9">
             <div class="row">
                 <!--Carousel-->
-                <div class="container-fluid carousel">
-                    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li ng-repeat="banner in banners" data-target="#myCarousel" data-slide-to="{{$index}}"></li>
-                        </ol>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox" ng-init="getBanner()">
-                            <div class="item" ng-class="{active:!$index}" ng-repeat="banner in banners">
-                                <img ng-src="{{banner.imageUrl}}" class="img-responsive banner" alt="Image">
-                                <div class="carousel-caption">
-                                    <h2>{{banner.title}}</h2>
-                                    <h5>{{banner.description}}</h5>
-                                    <h5>{{banner.createDate|date:"dd/MM/yyyy"}}</h5>
+                <div class="carousel" ng-init="getBanner()">
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="banner in banners track by banner._id" index="$index">
+                            <img ng-src="{{banner.imageUrl}}" style="margin:auto;">
+                            <div class="carousel-caption">
+                                <h4>Slide {{slide.id}}</h4>
+                                <p>{{slide.text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--End Carousel-->
+
+                <h4 class="block-title"><span class="glyphicon glyphicon-certificate"></span> SÁCH MỚI CẬP NHẬT</h4>
+                <div class="row products">
+                    <div ng-repeat="book in filteredBooks" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="panel panel-primary">
+                            <div class="panel-body">
+                                <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
+                                <br>
+                                <div class="book-name"><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
+                                <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
+                                <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
+                                <div class="rating">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-
-                        </a>
-                    </div>
-                </div>
-                <!--End Carousel-->
-            </div>
-            <h4 class="block-title"><span class="glyphicon glyphicon-certificate"></span> SÁCH MỚI CẬP NHẬT</h4>
-            <div class="row products">
-                <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="panel panel-primary">
-                        <div class="panel-body">
-                            <a href="#/books/detail/{{book._id}}" title="{{book.shortDescription}}"><img ng-src="{{book.images.main}}" class="img-responsive book-thumbnail"></a>
-                            <br>
-                            <div class="book-name"><a href="#/books/detail/{{book._id}}"><strong>{{book.title}}</strong></a></div>
-                            <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
-                            <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
-                            <div class="rating">
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
+                            <div class="panel-footer">
+                                <button class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span><span> Mua</span></button>
+                                <button class="btn btn-danger btn-fa" title="Thêm vào mục yêu thích"><span class="glyphicon glyphicon-heart"></span></button>
                             </div>
                         </div>
-                        <div class="panel-footer">
-                            <button class="btn btn-primary btn-buy"><span class="glyphicon glyphicon-shopping-cart"></span><span> Mua</span></button>
-                            <button class="btn btn-danger btn-fa" title="Thêm vào mục yêu thích"><span class="glyphicon glyphicon-heart"></span></button>
-                        </div>
                     </div>
                 </div>
+                <div class="col-sm-12">
+                    <ul uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm pagination-primary" boundary-link-numbers="false" force-ellipses="true"></ul>
+                </div>
             </div>
-            <!--<div class="col-sm-12">
-                <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm pagination-primary" boundary-link-numbers="false"></ul>
-            </div>-->
-        </div>
-        <!--End Product-->
+            <!--End Product-->

@@ -44,7 +44,8 @@
                 </div>
                 <div class="col-sm-12">
                     <hr>
-                    <p class="full-description"><strong>Nội dung chính:</strong> {{book.fullDescription}}</p>
+                    <strong>Nội dung chính: </strong>
+                    <div class="full-description" ng-model="book.fullDescription" ta-bind="text"></div>
                     <hr>
                     <h3><strong>Phản hồi</strong></h3>
                     <h5>Đánh giá

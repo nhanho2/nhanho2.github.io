@@ -4,25 +4,26 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
     $scope.getBooks = function() {
         $http.get(root + '/api/books').success(function(response) {
             $scope.books = response;
-            // $scope.viewby = 4
-            // $scope.totalItems = $scope.books.length;
-            // $scope.currentPage = 1;
-            // $scope.itemsPerPage = $scope.viewby;
-            // $scope.maxSize = 10;
-            // $scope.pageCount = function() {
-            //     return Math.ceil($scope.books.length / $scope.itemsPerPage);
-            // };
-            // $scope.$watch('currentPage + itemsPerPage', function() {
-            //     var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
-            //         end = begin + $scope.itemsPerPage;
+            $scope.viewby = 4;
+            $scope.totalItems = $scope.books.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = $scope.viewby;
+            $scope.maxSize = 3;
+            $scope.pageCount = function() {
+                return Math.ceil($scope.books.length / $scope.itemsPerPage);
+            };
+            $scope.$watch('currentPage + itemsPerPage', function() {
+                var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+                    end = begin + $scope.itemsPerPage;
 
-            //     $scope.filteredBooks = $scope.books.slice(begin, end);
-            // });
+                $scope.filteredBooks = $scope.books.slice(begin, end);
+            });
         });
     }
     $scope.getGenres = function() {
         $http.get(root + '/api/genres').success(function(response) {
             $scope.genres = response;
+
         });
     }
 
@@ -76,13 +77,27 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
     $scope.bookSearch = function() {
         $http.get(root + '/api/books/search/' + $scope.text).success(function(response) {
             $scope.books = response;
+            $scope.viewby = 4;
+            $scope.totalItems = $scope.books.length;
+            $scope.currentPage = 1;
+            $scope.itemsPerPage = $scope.viewby;
+            $scope.maxSize = 3;
+            $scope.pageCount = function() {
+                return Math.ceil($scope.books.length / $scope.itemsPerPage);
+            };
+            $scope.$watch('currentPage + itemsPerPage', function() {
+                var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+                    end = begin + $scope.itemsPerPage;
+
+                $scope.filteredBooks = $scope.books.slice(begin, end);
+            });
         });
     }
     $scope.submitSearch = function() {
         //window.location = window.location.href;
-        window.location.replace('#/search/' + $scope.text);
+        $location.url('search/' + $scope.text);
         //window.location.href = '#/search/' + $scope.text;
-        console.log('#/search/' + $scope.text)
+        console.log('search/' + $scope.text)
     }
     $scope.getBooksByGenre = function() {
         $scope.text = $routeParams.id;
