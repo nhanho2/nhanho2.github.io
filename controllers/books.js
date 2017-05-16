@@ -9,20 +9,20 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
     $scope.getGenres = function() {
         $http.get(root + '/api/genres').success(function(response) {
             $scope.genres = response;
-            $scope.viewby = 4
-            $scope.totalItems = $scope.books.length;
-            $scope.currentPage = 1;
-            $scope.itemsPerPage = $scope.viewby;
-            $scope.maxSize = 10;
-            $scope.pageCount = function() {
-                return Math.ceil($scope.books.length / $scope.itemsPerPage);
-            };
-            $scope.$watch('currentPage + itemsPerPage', function() {
-                var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
-                    end = begin + $scope.itemsPerPage;
+            // $scope.viewby = 4
+            // $scope.totalItems = $scope.books.length;
+            // $scope.currentPage = 1;
+            // $scope.itemsPerPage = $scope.viewby;
+            // $scope.maxSize = 10;
+            // $scope.pageCount = function() {
+            //     return Math.ceil($scope.books.length / $scope.itemsPerPage);
+            // };
+            // $scope.$watch('currentPage + itemsPerPage', function() {
+            //     var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+            //         end = begin + $scope.itemsPerPage;
 
-                $scope.filteredBooks = $scope.books.slice(begin, end);
-            });
+            //     $scope.filteredBooks = $scope.books.slice(begin, end);
+            // });
         });
     }
 
@@ -36,12 +36,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         var id = $routeParams.id;
         $http.get(root + '/api/books/genre/' + id).success(function(response) {
             $scope.genreBook = response;
-            var genreName = '';
-            for (var i = 0; i < $scope.genres.length; i++) {
-                if ($scope.genres[i]._id === id) {
-                    $scope.genreName = $scope.genres[i].name;
-                }
-            }
+            // var genreName = '';
+            // for (var i = 0; i < $scope.genres.length; i++) {
+            //     if ($scope.genres[i]._id === id) {
+            //         $scope.genreName = $scope.genres[i].name;
+            //     }
+            // }
         });
     }
     $scope.addBook = function() {
