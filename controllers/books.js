@@ -4,11 +4,6 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
     $scope.getBooks = function() {
         $http.get(root + '/api/books').success(function(response) {
             $scope.books = response;
-        });
-    }
-    $scope.getGenres = function() {
-        $http.get(root + '/api/genres').success(function(response) {
-            $scope.genres = response;
             // $scope.viewby = 4
             // $scope.totalItems = $scope.books.length;
             // $scope.currentPage = 1;
@@ -23,6 +18,11 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
 
             //     $scope.filteredBooks = $scope.books.slice(begin, end);
             // });
+        });
+    }
+    $scope.getGenres = function() {
+        $http.get(root + '/api/genres').success(function(response) {
+            $scope.genres = response;
         });
     }
 
