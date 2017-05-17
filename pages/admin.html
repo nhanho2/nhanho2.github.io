@@ -20,13 +20,13 @@
                                 </div>
                                 <div class="panel-footer">
 
-                                    <button class="btn btn-danger btn-admin-remove" data-toggle="modal" data-target="#myModal1" title="Xóa">
+                                    <button type="button" class="btn btn-danger btn-admin-remove" data-toggle="modal" data-target="#{{book._id}}" title="Xóa">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                                     <a class="btn btn-primary btn-admin-edit" href="#books/admin_edit/{{book._id}}"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</a>
-                                    <div class="modal fade" id="myModal1" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
+                                    <div class="modal fade" id="{{book._id}}" role="dialog">
+                                        <div class="modal-dialog confirm-delete">
+                                            <div class="modal-content ">
                                                 <div class="model-header">
                                                     <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove dismiss"></span></button>
                                                     <h4 class="block-title">Xác nhận xóa</h4>
@@ -35,7 +35,8 @@
                                                     <p>Bạn có chắc muốn xóa ?</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger btn-admin-remove" ng-click="removeBook(book._id)">Xóa</button>
+                                                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" ng-click="removeBook(book._id)">Xóa</button>
+                                                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Hủy</button>
                                                 </div>
                                             </div>
                                         </div>

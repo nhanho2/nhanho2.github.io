@@ -53,6 +53,10 @@ myApp.config(function($routeProvider, $locationProvider) {
             controller: 'bookCtrl',
             templateUrl: 'pages/authorBook.html'
         })
+        .when('/books/genre/:id', {
+            controller: 'bookCtrl',
+            templateUrl: 'pages/genreBook.html'
+        })
         .when('/search/:keyword', {
             controller: 'bookCtrl',
             templateUrl: 'pages/search.html'

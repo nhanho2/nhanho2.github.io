@@ -20,10 +20,10 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             });
         });
     }
+
     $scope.getGenres = function() {
         $http.get(root + '/api/genres').success(function(response) {
             $scope.genres = response;
-
         });
     }
 
@@ -33,22 +33,24 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
             $scope.book = response;
         });
     }
+
     $scope.getGenreBook = function() {
         var id = $routeParams.id;
         $http.get(root + '/api/books/genre/' + id).success(function(response) {
-            $scope.genreBook = response;
-            // var genreName = '';
-            // for (var i = 0; i < $scope.genres.length; i++) {
-            //     if ($scope.genres[i]._id === id) {
-            //         $scope.genreName = $scope.genres[i].name;
-            //     }
-            // }
+            $scope.books = response;
+            $scope.genreName = '';
+            for (var i = 0; i < $scope.genres.length; i++) {
+                if ($scope.genres[i]._id === id) {
+                    $scope.genreName = $scope.genres[i].name;
+                }
+            }
         });
     }
+
     $scope.addBook = function() {
         console.log($scope.book);
         $http.post(root + '/api/books/', $scope.book).success(function(response) {
-            window.location.href = '#/books';
+            window.location.href = '#/admin/';
         });
     }
 
@@ -61,56 +63,58 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
 
     $scope.removeBook = function(id) {
         $http.delete(root + '/api/books/' + id).success(function(response) {
-            window.location.href = '#/books';
+            window.location.href = '#/admin/';
         });
     }
+
     $scope.rate = 1;
     $scope.max = 5;
     $scope.isReadonly = false;
     $scope.hoveringOver = function(value) {
         $scope.overStar = value;
-    };
+    }
     $scope.ratingStates = [
         { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' }
     ];
-    $scope.text = $routeParams.keyword;
+
     $scope.bookSearch = function() {
+        $scope.text = $routeParams.keyword;
         $http.get(root + '/api/books/search/' + $scope.text).success(function(response) {
             $scope.books = response;
-            $scope.viewby = 4;
-            $scope.totalItems = $scope.books.length;
-            $scope.currentPage = 1;
-            $scope.itemsPerPage = $scope.viewby;
-            $scope.maxSize = 3;
-            $scope.pageCount = function() {
-                return Math.ceil($scope.books.length / $scope.itemsPerPage);
-            };
-            $scope.$watch('currentPage + itemsPerPage', function() {
-                var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
-                    end = begin + $scope.itemsPerPage;
-
-                $scope.filteredBooks = $scope.books.slice(begin, end);
-            });
         });
     }
+
+    $scope.myInterval = 3000;
+
+    $scope.today = new Date();
+
     $scope.submitSearch = function() {
         //window.location = window.location.href;
         $location.url('search/' + $scope.text);
         //window.location.href = '#/search/' + $scope.text;
         console.log('search/' + $scope.text)
     }
+
     $scope.getBooksByGenre = function() {
         $scope.text = $routeParams.id;
         $http.get(root + '/api/books/genre/' + $scope.text).success(function(response) {
             $scope.books = response;
+            var genreName = '';
+            for (var i = 0; i < $scope.genres.length; i++) {
+                if ($scope.genres[i]._id === $scope.text) {
+                    $scope.genreName = $scope.genres[i].name;
+                }
+            }
         });
     }
+
     $scope.getBooksByAuthor = function() {
         $scope.text = $routeParams.name;
         $http.get(root + '/api/books/author/' + $scope.text).success(function(response) {
             $scope.books = response;
         });
     }
+
     $scope.getBanner = function() {
             $http.get(root + '/api/banners/').success(function(response) {
                 $scope.banners = response;

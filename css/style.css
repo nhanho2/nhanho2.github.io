@@ -149,8 +149,6 @@ a:hover {
 }
 
 .price-item {
-    background-color: #337ab7;
-    color: white;
     margin-top: 20px;
 }
 
@@ -405,6 +403,10 @@ textarea {
 
 .modal-content {
     border-radius: 0px;
+}
+
+.confirm-delete {
+    max-width: 400px;
 }
 
 .register-form {

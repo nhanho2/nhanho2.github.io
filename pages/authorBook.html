@@ -1,10 +1,10 @@
-<div class="container" ng-controller="bookCtrl">
+<div class="container">
     <div class="row">
         <!--SideBar-->
         <div class="col-sm-3 sidebar" ng-init="getGenres()">
             <h4 class="block-title">DANH MỤC</h4>
             <div class="list-group wizard-menu">
-                <a href="#" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
+                <a href="#/books/category/{{genre._id}}" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
             </div>
         </div>
         <!--End SideBar-->
@@ -37,4 +37,3 @@
             </div>
         </div>
         <!--End Product-->
-     

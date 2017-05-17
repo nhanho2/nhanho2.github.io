@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container" ng-init="getBooksByGenre()">
     <div class="row">
         <!--SideBar-->
         <div class="col-sm-3 sidebar" ng-init="getGenres()">
             <h4 class="block-title">DANH MỤC</h4>
             <div class="list-group wizard-menu">
-                <a href="#" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
+                <a href="#/books/category/{{genre._id}}" class="list-group-item" ng-repeat="genre in genres">{{genre.name}}</a>
             </div>
         </div>
         <!--End SideBar-->
         <!--Product-->
-        <div class="col-sm-9" ng-init="getBooksByGenre()">
-            <h4 class="block-title">Danh sách thể loại "{{text}}"</h4>
+        <div class="col-sm-9">
+            <h4 class="block-title">Thể loại "{{genreName}}"</h4>
             <div class="row products">
                 <div ng-repeat="book in books" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="panel panel-primary">

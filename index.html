@@ -52,41 +52,51 @@
                         </form>
                     </li>
                     <li class="dropdown cart-drop">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <a href="#home" data-toggle="modal" data-target="#cartList">
                             <span class="glyphicon glyphicon-shopping-cart user-cart"></span>
                             <span class="badge">2</span>
                             <span class="caret"></span>
                         </a>
-                        <div class="dropdown-content cart-drop-content">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51l9jVAk1uL._AC_US160_.jpg" class="img-responsive cart-item-img" alt="The Collapsing Empire"></a>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h5 class="price-item">10.000 VND</h5>
-                                </div>
-                                <div class="col-sm-4">
-                                    <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
+                        <div class="modal fade" id="cartList" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
+                                        <h3 class="block-title block-login">Sản phẩm đã chọn</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51l9jVAk1uL._AC_US160_.jpg" class="img-responsive cart-item-img" alt="The Collapsing Empire"></a>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h5 class="price-item">10.000 VND</h5>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51KtxvROG5L._AC_US160_.jpg" class="img-responsive cart-item-img" alt="City of Wolves"></a>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h5 class="price-item">10.000 VND</h5>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#cart">
+                                        <h5 class="block-title text-center view-item">View your Cart</h5>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51KtxvROG5L._AC_US160_.jpg" class="img-responsive cart-item-img" alt="City of Wolves"></a>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h5 class="price-item">10.000 VND</h5>
-                                </div>
-                                <div class="col-sm-4">
-                                    <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
-                                </div>
-                            </div>
-                            <a href="#cart">
-                                <h5 class="block-title text-center view-item">View your Cart</h5>
-                            </a>
                         </div>
                     </li>
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal">
+                        <a href="#home" data-toggle="modal" data-target="#myModal">
                             <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
                         </a>
                         <div class="modal fade" id="myModal" role="dialog">
@@ -98,7 +108,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="login-input">
-                                            hoặc <a href="#register" data-dismiss="modal">Đăng ký</a>
+                                            hoặc <a href="#register" onclick="$('.modal').modal('hide')">Đăng ký</a>
                                             <form role="form">
                                                 <div class="form-group">
                                                     <label for="inputUsernameEmail">Tên đăng nhập, hoặc email</label>

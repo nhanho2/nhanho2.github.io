@@ -17,8 +17,8 @@
                         <div uib-slide ng-repeat="banner in banners track by banner._id" index="$index">
                             <img ng-src="{{banner.imageUrl}}" style="margin:auto;">
                             <div class="carousel-caption">
-                                <h4>Slide {{slide.id}}</h4>
-                                <p>{{slide.text}}</p>
+                                <h4>{{banner.title}}</h4>
+                                <p>{{banner.createDate|date}}</p>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,8 @@
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <ul uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm pagination-primary" boundary-link-numbers="false" force-ellipses="true"></ul>
+                    <ul uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" items-per-page="itemsPerPage" class="pagination-sm" boundary-links="true" force-ellipses="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="Đầu" last-text="Cuối"
+                        num-pages="numPages"></ul>
                 </div>
             </div>
             <!--End Product-->
