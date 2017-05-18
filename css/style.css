@@ -84,6 +84,10 @@ a:hover {
     display: block;
 }
 
+.user-logout {
+    cursor: pointer;
+}
+
 .cart-drop-content {
     display: none;
     position: absolute;
@@ -410,7 +414,7 @@ textarea {
 }
 
 .register-form {
-    width: 70%;
+    width: 50%;
 }
 
 .block-login {
@@ -628,7 +632,6 @@ select {
 
 .profile {
     background-color: white;
-    margin: -10px auto 10px auto;
 }
 
 .profile-img {

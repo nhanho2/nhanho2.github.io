@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
@@ -19,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 </head>
 
-<body ng-app='myApp' ng-controller='bookCtrl'>
+<body ng-app='myApp' ng-controller='bookCtrl' ng-init="getGenres()">
     <!--Menu Bar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -88,15 +89,15 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#cart">
+                                    <a href="#cart" onclick="$('.modal').modal('hide')">
                                         <h5 class="block-title text-center view-item">View your Cart</h5>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li>
-                        <a href="#home" data-toggle="modal" data-target="#myModal">
+                    <li ng-init="loadLogin()">
+                        <a href="#home" data-toggle="modal" data-target="#myModal" ng-hide="isLogged()">
                             <span class="glyphicon glyphicon-log-in"></span> Đăng nhập
                         </a>
                         <div class="modal fade" id="myModal" role="dialog">
@@ -109,15 +110,15 @@
                                     <div class="modal-body">
                                         <div class="login-input">
                                             hoặc <a href="#register" onclick="$('.modal').modal('hide')">Đăng ký</a>
-                                            <form role="form">
+                                            <form role="form" ng-submit="summitLogin()" method="post">
                                                 <div class="form-group">
                                                     <label for="inputUsernameEmail">Tên đăng nhập, hoặc email</label>
-                                                    <input type="text" class="form-control" id="inputUsernameEmail">
+                                                    <input type="text" class="form-control" ng-model="loginUser.email">
                                                 </div>
                                                 <div class="form-group">
                                                     <a class="pull-right" href="#">Quên mật khẩu?</a>
                                                     <label for="inputPassword">Mật khẩu</label>
-                                                    <input type="password" class="form-control" id="inputPassword">
+                                                    <input type="password" class="form-control" ng-model="loginUser.password">
                                                 </div>
                                                 <div class="checkbox pull-right">
                                                     <label>
@@ -125,7 +126,10 @@
                                                              Lưu tài khoản
                                                         </label>
                                                 </div>
-                                                <button type="submit" class="btn btn btn-primary btn-log">Đăng Nhập</button>
+                                                <br>
+                                                <br>
+                                                <button type="submit" class="btn btn btn-primary btn-log" onclick="$('.modal').modal('hide')">Đăng Nhập</button>
+                                                <button class="btn btn-default btn-profile-cancel pull-right" data-dismiss="modal">Hủy</button>
                                                 <br>
                                             </form>
                                         </div>
@@ -134,7 +138,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown user-drop">
+                    <li class="dropdown user-drop" ng-show="isLogged()">
                         <a href="#" class="dropdown-toggle open" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> Xin chào, Nhan Ho <span class="caret"></span>
                         </a>
@@ -142,7 +146,7 @@
                             <a href="#admin"><span class="glyphicon glyphicon-lock"></span> Admin</a>
                             <a href="#profile"><span class="glyphicon glyphicon-file"></span> Hồ sơ</a>
                             <a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</span></a>
-                            <a href="#"><span class="glyphicon glyphicon-off"></span> Đăng xuất</span></a>
+                            <a ng-click="logOut()" class="user-logout"><span class="glyphicon glyphicon-off"></span> Đăng xuất</span></a>
                         </div>
                     </li>
                 </ul>
@@ -155,7 +159,7 @@
     <div ng-view></div>
 
     <!--Footer-->
-    <footer class="footer-bs">
+    <footer class="fixed-bottom footer-bs">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3 footer-brand">

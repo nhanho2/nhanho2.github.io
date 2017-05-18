@@ -1,4 +1,4 @@
-myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', function($scope, $http, $location, $routeParams) {
+myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$cookieStore', function($scope, $http, $location, $routeParams, $cookieStore) {
     console.log('bookCtrl loaded...');
     var root = 'https://green-web-bookstore.herokuapp.com';
     $scope.getBooks = function() {
@@ -134,22 +134,73 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', fu
         opened: false
     };
     //
-    $scope.user = {
-            'userName': 'Nhan Fisher',
-            'userAvatarUrl': 'https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r'
+
+    // $scope.comment = {};
+    // $scope.addComment = function(post) {
+    //     $scope.comment.date = Date.now();
+    //     $scope.comment.userName = $scope.user.userName;
+    //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
+    //     post.comments.push($scope.comment);
+    //     var req = {
+    //         method: 'PUT',
+    //         url: bookservice.getBook + $routeParams.itemId,
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         data: post
+    //     }
+    $scope.init = function() {
+        $scope.user = $cookieStore.get('user');
+        $scope.token = $cookieStore.get('token');
+    }
+    $scope.isLogged = function() {
+        return $cookieStore.get('token') != undefined;
+    }
+    $scope.logOut = function() {
+        $cookieStore.remove('token');
+        $cookieStore.remove('user');
+    }
+    $scope.viewProfile = function() {
+        var token = $cookieStore.get('token');
+        if (token === undefined) {
+            $location.url("/login")
         }
-        // $scope.comment = {};
-        // $scope.addComment = function(post) {
-        //     $scope.comment.date = Date.now();
-        //     $scope.comment.userName = $scope.user.userName;
-        //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
-        //     post.comments.push($scope.comment);
-        //     var req = {
-        //         method: 'PUT',
-        //         url: bookservice.getBook + $routeParams.itemId,
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //         data: post
-        //     }
+    }
+    $scope.summitLogin = function() {
+        $http.post(root + '/api/auth', $scope.loginUser).success(function(response) {
+            var isSuccess = response.success;
+            if (isSuccess) {
+                $cookieStore.put('token', response.token);
+                $cookieStore.put('user', response.user);
+                $scope.user = $cookieStore.get('user');
+                $scope.token = $cookieStore.get('token');
+                //Redirect here
+                $location.url("/")
+            } else {
+                //Raise Error
+                alert(response.message);
+            }
+        }).error(function(data, status, headers, config) {
+            console.log(data, status, headers, config);
+        });;
+    }
+    $scope.summitSignup = function() {
+        $http.post(root + '/api/signup/', $scope.signUpUser).success(function(response) {
+            var isSuccess = response.success;
+            if (isSuccess) {
+                $cookieStore.put('token', response.token);
+                $cookieStore.put('user', response.user);
+                $scope.user = $cookieStore.get('user');
+                $scope.token = $cookieStore.get('token');
+                //Redirect here
+                $location.url("/")
+            } else {
+                //Raise Error
+                alert(response.message);
+            }
+        }).error(function(data, status, headers, config) {
+            console.log(data, status, headers, config);
+        });
+    }
+
 }]);

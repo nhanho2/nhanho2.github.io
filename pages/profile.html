@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container" ng-init="viewProfile()">
     <div class="row profile">
-        <h4 class="block-title">Thông tin tài khoản</h4>
+        <h4 class="block-title"><b>Thông tin tài khoản</b></h4>
         <!-- left column -->
         <div class="col-md-4 col-sm-6 col-xs-12">
             <div class="text-center">
-                <img src="https://s.gravatar.com/avatar/8dd03d84d5c81e53fcbf6c307b731094?s=500&r=r" class="img-responsive profile-img" alt="avatar">
-                <h3>Nhan Fisher Ho</h3>
-                    <label class="custom-file-upload">                               
+                <img ng-src="{{user.avatarUrl}}" class="img-responsive profile-img" alt="avatar">
+                <h4><b>{{user.name}}</b></h4>
+                <label class="custom-file-upload">                               
                             <input type="file"/><span class="glyphicon glyphicon-camera"></span> Ảnh đại diện
                     </label>
             </div>
@@ -18,38 +18,38 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Họ tên</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" ng-model="user.name">
                     </div>
-                </div>        
+                </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Email</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email">
+                        <input class="form-control" type="email" ng-model="user.userEmail">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Tên đăng nhập</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" ng-model="user.userName">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Mật khẩu</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" ng-model="user.userPass">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Xác nhận mật khẩu</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password">
+                        <input class="form-control" type="password" ng-model="user.userPass">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <button class="btn btn-success btn-profile-info" type="submit"><span class="glyphicon glyphicon-pencil"></span> Cập nhật</button>
-                        <button class="btn btn-default btn-profile-cancel" type="reset">Hủy</button>
+                        <button class="btn btn-success btn-profile-info pull-left" type="submit"><span class="glyphicon glyphicon-pencil"></span> Cập nhật</button>
+                        <a href="#home" class="btn btn-default btn-profile-cancel pull-right">Về trang chủ</a>
                     </div>
                 </div>
             </form>

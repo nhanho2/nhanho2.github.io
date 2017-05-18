@@ -1,7 +1,7 @@
 <div class="container" ng-init="getBooks()">
     <div class="row">
         <!--SideBar-->
-        <div class="col-sm-3 sidebar" ng-init="getGenres()">
+        <div class="col-sm-3 sidebar">
             <h4 class="block-title"><span class="glyphicon glyphicon-th-list"></span> DANH MỤC</h4>
             <div class="list-group wizard-menu">
                 <a class="list-group-item" ng-repeat="genre in genres" href="#/books/category/{{genre._id}}">{{genre.name}}</a>
