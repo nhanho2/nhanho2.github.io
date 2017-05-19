@@ -1,0 +1,74 @@
+<!--Register Page-->
+<div class="container register-form">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="block-title block-contact">Đăng ký tài khoản</h3>
+        </div>
+        <div class="panel-body">
+            <form action="" method="POST" name="signUpForm" novalidate ng-submit="summitSignup()">
+                <div class="panel-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                            <input type="text" name="name" ng-model="signUpUser.name" placeholder="Họ tên" class="form-control" autofocus="autofocus" required>
+                            <span ng-show="signUpForm.name.$error.required" class="text-danger"> Chưa điền Họ Tên</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                            <input type="text" name="userName" ng-model="signUpUser.userName" placeholder="Tên đăng nhập" class="form-control" required>
+                            <span ng-show="signUpForm.userName.$error.required" class="text-danger"> Chưa điền Tên đăng nhập</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
+                            <input type="password" name="pass" ng-model="signUpUser.password" placeholder="Mật khẩu" class="form-control" required>
+                            <span ng-show="signUpForm.password.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
+                            <input type="password" name="name" ng-model="signUpUser.password" placeholder="Xác nhận lại mật khẩu" class="form-control" required>
+                            <span ng-show="signUpForm.password.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
+                            <input type="email" name="email" ng-model="signUpUser.email" placeholder="Email" class="form-control" required>
+                            <span ng-show="signUpForm.email.$error.required" class="text-danger"> Chưa đăng ký email</span>
+                            <span ng-show="signUpForm.email.$error.email" class="text-danger"> Địa chỉ email không đúng</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-picture blue"></i></span>
+                            <input type="text" name="url" ng-model="signUpUser.avatarUrl" placeholder="Đường dẫn ảnh đại diện" class="form-control"> hoặc
+                            <br>
+                            <label class="custom-file-upload">                               
+                            <input type="file"/><span class="glyphicon glyphicon-camera"></span> Chọn ảnh từ máy tính
+                    </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                            <input type="number" name="phone" ng-model="signUpUser.phone" placeholder="Số điện thoại" class="form-control">
+                            <span ng-show="signUpForm.phone.$error.number" class="text-danger"> Vui lòng nhập số</span>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-default btn-register pull-right" href="#login">Đã có tài khoản</a>
+                        <button type="submit" class="btn btn-success pull-left" ng-disabled="signUpForm.$invalid">Đăng ký</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer"></div>
+    </div>
+</div>
+
+<!--End Register Page-->

@@ -21,8 +21,8 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/contact.html',
             controller: 'bookCtrl'
         })
-        .when('/register', {
-            templateUrl: 'pages/register.html',
+        .when('/signup', {
+            templateUrl: 'pages/signup.html',
             controller: 'bookCtrl'
         })
         .when('/login', {

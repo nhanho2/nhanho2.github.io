@@ -1,19 +1,19 @@
 <!--Login Page-->
-<div class="container">
+<div class="container" ng-init="loadLogin()">
     <div class="row">
         <div class="col-sm-6 col-centered login-form">
             <h3 class="block-title block-login">Đăng Nhập</h3>
-            <div class="login-input">
-                hoặc <a href="#register">Đăng ký</a>
-                <form role="form">
+            <div class="container-fluid login-input">
+                hoặc <a href="#signup">Đăng ký</a>
+                <form role="form" ng-submit="summitLogin()" method="post">
                     <div class="form-group">
                         <label for="inputUsernameEmail">Tên đăng nhập, hoặc email</label>
-                        <input type="text" class="form-control" autofocus="autofocus" id="inputUsernameEmail">
+                        <input type="text" class="form-control" autofocus="autofocus" ng-model="loginUser.email">
                     </div>
                     <div class="form-group">
                         <a class="pull-right" href="#">Quên mật khẩu?</a>
                         <label for="inputPassword">Mật khẩu</label>
-                        <input type="password" class="form-control" id="inputPassword">
+                        <input type="password" class="form-control" ng-model="loginUser.password">
                     </div>
                     <div class="checkbox pull-right">
                         <label>
@@ -21,6 +21,8 @@
                             Lưu tài khoản
                         </label>
                     </div>
+                    <br>
+                    <br>
                     <button type="submit" class="btn btn btn-primary btn-log pull-left">Đăng Nhập</button>
                     <a href="#home" class="btn btn-default btn-profile-cancel pull-right">Về trang chủ</a>
                 </form>

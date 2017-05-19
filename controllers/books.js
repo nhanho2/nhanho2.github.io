@@ -8,7 +8,7 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
             $scope.totalItems = $scope.books.length;
             $scope.currentPage = 1;
             $scope.itemsPerPage = $scope.viewby;
-            $scope.maxSize = 3;
+            $scope.maxSize = 2;
             $scope.pageCount = function() {
                 return Math.ceil($scope.books.length / $scope.itemsPerPage);
             };

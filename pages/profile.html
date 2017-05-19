@@ -1,5 +1,5 @@
-<div class="container" ng-init="viewProfile()">
-    <div class="row profile">
+<div class="container" ng-init="init()">
+    <div class="row profile" ng-init="viewProfile()">
         <h4 class="block-title"><b>Thông tin tài khoản</b></h4>
         <!-- left column -->
         <div class="col-md-4 col-sm-6 col-xs-12">
@@ -7,7 +7,7 @@
                 <img ng-src="{{user.avatarUrl}}" class="img-responsive profile-img" alt="avatar">
                 <h4><b>{{user.name}}</b></h4>
                 <label class="custom-file-upload">                               
-                            <input type="file"/><span class="glyphicon glyphicon-camera"></span> Ảnh đại diện
+                            <input type="file"/><span class="glyphicon glyphicon-camera"></span> Ảnh đại diện từ máy
                     </label>
             </div>
         </div>

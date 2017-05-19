@@ -160,6 +160,10 @@ a:hover {
     border-radius: 0px;
 }
 
+.form-mess {
+    margin-top: 5px;
+}
+
 .user-cart {
     font-size: 20px;
 }
@@ -440,6 +444,14 @@ textarea {
     margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.login-input {
+    background-color: white;
+}
+
+#login {
+    cursor: pointer;
 }
 
 .span-or {
