@@ -413,6 +413,10 @@ textarea {
     border-radius: 0px;
 }
 
+.modal-backdrop {
+    display: none;
+}
+
 .confirm-delete {
     max-width: 400px;
 }
@@ -448,6 +452,11 @@ textarea {
 
 .login-input {
     background-color: white;
+}
+
+.login-modal {
+    width: 400px;
+    margin: auto 100px auto 100px;
 }
 
 #login {

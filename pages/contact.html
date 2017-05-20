@@ -6,7 +6,7 @@
                 <div class="panel-heading">
                     <h3 class="block-title block-contact">Liên Hệ</h3>
                 </div>
-                <form action="" method="POST" name="contactForm" novalidate>
+                <form method="POST" name="contactForm" novalidate>
                     <div class="panel-body">
                         <div class="form-group">
                             <div class="input-group">
@@ -18,7 +18,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
-                                <input type="email" name="email" ng-model="contactUser.userEmail" placeholder="Email" class="form-control" required>
+                                <input type="email" name="email" ng-model="contactUser.email" placeholder="Email" class="form-control" required>
                                 <span ng-show="contactForm.email.$error.required" class="text-danger"> Chưa điền Email</span>
                                 <span ng-show="contactForm.email.$error.email" class="text-danger"> Địa chỉ email không đúng</span>
                             </div>

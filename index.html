@@ -100,9 +100,9 @@
                         <a id="login" data-toggle="modal" data-target="#myModal" ng-hide="isLogged()">
                             Đăng nhập
                         </a>
-                        <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal fade" id="myModal" role="dialog" ng-hide="isLogged()">
                             <div class="modal-dialog">
-                                <div class="modal-content">
+                                <div class="modal-content login-modal">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
                                         <h3 class="block-title block-login">Đăng Nhập</h3>
@@ -111,6 +111,9 @@
                                         <div class="login-input">
                                             hoặc <a href="#signup" onclick="$('.modal').modal('hide')">Đăng ký</a>
                                             <form role="form" ng-submit="summitLogin()" method="post">
+                                                <div class="form-group">
+                                                    <h5 class="text-danger"><b>{{error}}</b></h5>
+                                                </div>
                                                 <div class="form-group">
                                                     <label for="inputUsernameEmail">Tên đăng nhập, hoặc email</label>
                                                     <input type="text" class="form-control" ng-model="loginUser.email">
@@ -128,7 +131,7 @@
                                                 </div>
                                                 <br>
                                                 <br>
-                                                <button type="submit" class="btn btn btn-primary btn-log" onclick="$('.modal').modal('hide')">Đăng Nhập</button>
+                                                <button type="submit" class="btn btn btn-primary btn-log">Đăng Nhập</button>
                                                 <button class="btn btn-default btn-profile-cancel pull-right" data-dismiss="modal">Hủy</button>
                                                 <br>
                                             </form>
@@ -138,9 +141,9 @@
                             </div>
                         </div>
                     </li>
-                    <li class="dropdown user-drop" ng-show="isLogged()">
-                        <a href="#" class="dropdown-toggle open" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-user"></span> Xin chào, Nhan Ho <span class="caret"></span>
+                    <li class="dropdown user-drop" ng-show="isLogged()" ng-init="init()">
+                        <a href="#home" class="dropdown-toggle open" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> Xin chào, {{user.name}} <span class="caret"></span>
                         </a>
                         <div class="dropdown-content user-drop-content">
                             <a href="#admin"><span class="glyphicon glyphicon-lock"></span> Admin</a>

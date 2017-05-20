@@ -179,6 +179,14 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
             } else {
                 //Raise Error
                 alert(response.message);
+                $scope.error = "";
+                if (response.message === "Authentication failed. User not found.") {
+                    $scope.error = "Không tìm thấy người dùng";
+                } else if (response.message === "Authentication failed. Wrong password.") {
+                    $scope.error = "Sai mật khẩu vui lòng nhập lại";
+                } else {
+                    $scope.error = "";
+                }
             }
         }).error(function(data, status, headers, config) {
             console.log(data, status, headers, config);
@@ -197,6 +205,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
             } else {
                 //Raise Error
                 alert(response.message);
+                $scope.error = "";
+                if (response.message === "That email is already taken.") {
+                    $scope.error = "Email đã được dùng.";
+                } else {
+                    $scope.error = "";
+                }
             }
         }).error(function(data, status, headers, config) {
             console.log(data, status, headers, config);
