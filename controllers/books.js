@@ -135,20 +135,17 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
     };
     //
 
-    // $scope.comment = {};
-    // $scope.addComment = function(post) {
-    //     $scope.comment.date = Date.now();
-    //     $scope.comment.userName = $scope.user.userName;
-    //     $scope.comment.userAvatarUrl = $scope.user.userAvatarUrl;
-    //     post.comments.push($scope.comment);
-    //     var req = {
-    //         method: 'PUT',
-    //         url: bookservice.getBook + $routeParams.itemId,
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         data: post
-    //     }
+    $scope.comment = {};
+    $scope.addComment = function(post) {
+        $scope.comment.createdDate = Date.now();
+        $scope.comment.userId = $scope.user._id;
+        $scope.comment.bookId = post._id;
+        // $scope.comment.userAvatarUrl = $scope.user.avatarUrl;
+        $http.post(root + '/api/books/comment', $scope.comment).success(function(response) {
+            window.location.href = '#/books/detail/{{book._id}}';
+        });
+
+    }
     $scope.init = function() {
         $scope.user = $cookieStore.get('user');
         $scope.token = $cookieStore.get('token');

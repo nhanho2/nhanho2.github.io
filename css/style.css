@@ -19,6 +19,46 @@ body {
     margin-top: -30%;
 }
 
+@media (max-width: 800px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,
+    .navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+        padding: 12px;
+        border-radius: 0px;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in {
+        display: block !important;
+    }
+}
+
 .input-group-addon {
     border: none;
     background: white;
@@ -409,12 +449,12 @@ textarea {
     text-align: justify;
 }
 
-.modal-content {
-    border-radius: 0px;
-}
-
 .modal-backdrop {
     display: none;
+}
+
+.modal-content {
+    border-radius: 0px;
 }
 
 .confirm-delete {
@@ -763,4 +803,8 @@ select {
     .footer-bs .footer-ns {
         border-left: solid 1px rgba(255, 255, 255, 0.10);
     }
+}
+
+.pagination-md {
+    font-size: 15px;
 }

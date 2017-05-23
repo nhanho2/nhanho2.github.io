@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
@@ -38,10 +39,8 @@
                     <li><a href="#/">Trang chủ</a></li>
                     <li><a href="#">Giới thiệu</a></li>
                     <li><a href="#contact">Liên hệ</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <form class="navbar-form navbar-right" role="search" ng-submit="submitSearch()">
+                        <form class="navbar-form" role="search" ng-submit="submitSearch()">
                             <div class="input-group">
                                 <input type="text" ng-model="text" class="form-control search-text" placeholder="Tìm kiếm">
                                 <span class="input-group-addon">
@@ -52,15 +51,17 @@
                             </div>
                         </form>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown cart-drop">
-                        <a href="#home" data-toggle="modal" data-target="#cartList">
+                        <a href="#/" data-toggle="modal" data-target="#cartList">
                             <span class="glyphicon glyphicon-shopping-cart user-cart"></span>
                             <span class="badge">2</span>
                             <span class="caret"></span>
                         </a>
                         <div class="modal fade" id="cartList" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
+                            <div class="modal-dialog pull-right">
+                                <div class="modal-content pull-right">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button>
                                         <h3 class="block-title block-login">Sản phẩm đã chọn</h3>
@@ -77,6 +78,7 @@
                                                 <button class="btn btn-danger btn-sm btn-remove-item"><span class="glyphicon glyphicon-remove"></span></button>
                                             </div>
                                         </div>
+                                        <br>
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51KtxvROG5L._AC_US160_.jpg" class="img-responsive cart-item-img" alt="City of Wolves"></a>
@@ -142,7 +144,7 @@
                         </div>
                     </li>
                     <li class="dropdown user-drop" ng-show="isLogged()" ng-init="init()">
-                        <a href="#home" class="dropdown-toggle open" data-toggle="dropdown">
+                        <a href="#/" class="dropdown-toggle open" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> Xin chào, {{user.name}} <span class="caret"></span>
                         </a>
                         <div class="dropdown-content user-drop-content">
@@ -203,13 +205,14 @@
                     </p>
                 </div>
             </div>
-            <h4 class="text-center">© 2017 Nhan Fisher Ho, All rights reserved</h4>
+            <h4 class="text-center">© 2017 Nhan Fisher Ho. All rights reserved</h4>
         </div>
     </footer>
     <!--End Footer-->
     <script src="app.js"></script>
     <script src="bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="controllers/books.js"></script>
+    <div class="modal-backdrop fade in"></div>
 </body>
 
 </html>
