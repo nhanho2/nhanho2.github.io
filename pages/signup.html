@@ -22,14 +22,14 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
                             <input type="password" name="pass" ng-model="signUpUser.password" placeholder="Mật khẩu" class="form-control" required>
-                            <span ng-show="signUpForm.password.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
+                            <span ng-show="signUpForm.pass.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
                             <input type="password" name="name" ng-model="signUpUser.password" placeholder="Xác nhận lại mật khẩu" class="form-control" required>
-                            <span ng-show="signUpForm.password.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
+                            <span ng-show="signUpForm.pass.$error.required" class="text-danger"> Chưa tạo mật khẩu</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -44,10 +44,6 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-picture blue"></i></span>
                             <input type="text" name="url" ng-model="signUpUser.avatarUrl" placeholder="Đường dẫn ảnh đại diện" class="form-control">
-                            <br>
-                            <label class="custom-file-upload">                               
-                            <input type="file"/><span class="glyphicon glyphicon-camera"></span> Chọn ảnh từ máy tính
-                    </label>
                         </div>
                     </div>
                     <div>

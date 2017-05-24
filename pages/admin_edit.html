@@ -8,21 +8,23 @@
                         <div class="form-group">
                             <label>Tên sách</label>
                             <input type="text" class="form-control" ng-model="book.title" ng-required="true" name="title" placeholder="Tên sách">
+                            <p ng-show="editingForm.title.$error.required" class="text-danger"> Chưa điền tên sách</p>
                         </div>
                         <div class="form-group" ng-init="getGenres()">
                             <label>Danh mục</label>
                             <select ng-model="book.genre" name="genres" ng-required="true" class="form-control" ng-options="genre as genre.name for genre in genres track by genre._id"></select>
-                            <p ng-show="editingForm.genres.$invalid" class="text-danger"> Chưa chọn danh mục</p>
+                            <p ng-show="editingForm.genres.$invalid" class="text-danger"> Thể loại không có sẵn</p>
+                            <p ng-show="editingForm.title.$error.required" class="text-danger"> Chưa chọn danh mục</p>
                         </div>
                         <div class="form-group">
                             <label>Tác giả</label>
-                            <input type="text" class="form-control" ng-required="true" ng-model="book.author" placeholder="Tác giả">
-                            <p ng-show="editingForm.title.$untouched" class="text-danger"> Chưa điền tên tác giả</p>
+                            <input type="text" class="form-control" ng-required="true" ng-model="book.author" name="author" placeholder="Tác giả">
+                            <p ng-show="editingForm.author.$error.required" class="text-danger"> Chưa điền tên tác giả</p>
                         </div>
                         <div class="form-group">
                             <label>Nhà xuất bản</label>
-                            <input type="text" class="form-control" ng-required="true" ng-model="book.publisher" placeholder="Nhà xuất bản">
-                            <p ng-show="editingForm.title.$untouched" class="text-danger"> Chưa điền tên nhà xuất bản</p>
+                            <input type="text" class="form-control" ng-required="true" ng-model="book.publisher" name="publish" placeholder="Nhà xuất bản">
+                            <p ng-show="editingForm.publish.$error.required" class="text-danger"> Chưa điền tên nhà xuất bản</p>
                         </div>
                         <div class="form-group">
                             <label>Ảnh bìa</label>
@@ -77,16 +79,18 @@
                         <div class="form-group">
                             <label>Mã Sku</label>
                             <input type="text" class="form-control" name="sku" ng-required="true" ng-model="book.sku" placeholder="Sku">
+                            <p ng-show="editingForm.sku.$error.required" class="text-danger"> Vui lòng nhập mã sản phẩm</p>
                         </div>
                         <div class="form-group">
                             <label>Giá trước đây</label>
                             <input type="number" class="form-control" name="preprice" ng-model="book.previousPrice">
-                            <p ng-show="addingForm.preprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
+                            <p ng-show="editingForm.preprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
                         </div>
                         <div class="form-group">
                             <label>Giá hiện tại</label>
                             <input type="number" class="form-control" name="sellprice" ng-required="true" ng-model="book.sellingPrice">
-                            <p ng-show="addingForm.sellprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
+                            <p ng-show="editingForm.sellprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
+                            <p ng-show="editingForm.sellprice.$error.required" class="text-danger"> Vui lòng nhập giá bán</p>
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa</button>
                         <a href="#admin" class="btn btn-default">Trở về</a>

@@ -8,22 +8,22 @@
                         <div class="form-group">
                             <label>Tên sách</label>
                             <input type="text" class="form-control" ng-model="book.title" ng-required="true" name="title" placeholder="Tên sách">
-                            <p ng-show="addingForm.title.$untouched" class="text-danger"> Chưa điền tên sách</p>
+                            <p ng-show="addingForm.title.$error.required" class="text-danger"> Chưa điền tên sách</p>
                         </div>
                         <div class="form-group" ng-init="getGenres()">
                             <label>Danh mục</label>
                             <select ng-model="book.genre" name="genres" ng-required="true" class="form-control" ng-options="genre as genre.name for genre in genres" />
-                            <p ng-show="addingForm.genres.$invalid" class="text-danger"> Chưa chọn danh mục</p>
+                            <p ng-show="addingForm.genres.$error.required" class="text-danger"> Chưa chọn danh mục</p>
                         </div>
                         <div class="form-group">
                             <label>Tác giả</label>
-                            <input type="text" class="form-control" ng-model="book.author" placeholder="Tác giả">
-                            <p ng-show="addingForm.title.$untouched" class="text-danger"> Chưa điền tên tác giả</p>
+                            <input type="text" class="form-control" ng-model="book.author" ng-required="true" name="author" placeholder="Tác giả">
+                            <p ng-show="addingForm.author.$error.required" class="text-danger"> Chưa điền tên tác giả</p>
                         </div>
                         <div class="form-group">
                             <label>Nhà xuất bản</label>
-                            <input type="text" class="form-control" ng-model="book.publisher" placeholder="Nhà xuất bản">
-                            <p ng-show="addingForm.title.$untouched" class="text-danger"> Chưa điền tên nhà xuất bản</p>
+                            <input type="text" class="form-control" ng-model="book.publisher" ng-required="true" name="publish" placeholder="Nhà xuất bản">
+                            <p ng-show="addingForm.publish.$error.required" class="text-danger"> Chưa điền tên nhà xuất bản</p>
                         </div>
                         <div class="form-group">
                             <label>Ảnh bìa</label>
@@ -78,7 +78,7 @@
                         <div class="form-group">
                             <label>Mã Sku</label>
                             <input type="text" class="form-control" name="sku" ng-model="book.sku" placeholder="Sku">
-                            <p ng-show="addingForm.sku.$untouched" class="text-danger"> Chưa điền mã Sku</p>
+                            <p ng-show="addingForm.sku.$error.required" class="text-danger"> Chưa điền mã sản phẩm</p>
                         </div>
                         <div class="form-group">
                             <label>Giá trước đây</label>
@@ -89,6 +89,7 @@
                             <label>Giá hiện tại</label>
                             <input type="number" class="form-control" name="sellprice" ng-required="true" ng-model="book.sellingPrice">
                             <p ng-show="addingForm.sellprice.$error.number" class="text-danger"> Vui lòng nhập số</p>
+                            <p ng-show="addingForm.sellprice.$error.required" class="text-danger"> Vui lòng nhập giá bán</p>
                         </div>
                         <button type="submit" class="btn btn-primary" ng-disabled="addingForm.$invalid"><span class="glyphicon glyphicon-thumbs-up"></span> Đăng</button>
                         <a href="#admin" class="btn btn-default">Trở về</a>

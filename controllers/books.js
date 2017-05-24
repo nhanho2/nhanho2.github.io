@@ -137,22 +137,29 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
 
     $scope.comment = {};
     $scope.addComment = function(post) {
-        $scope.comment.createdDate = Date.now();
-        $scope.comment.userId = $scope.user._id;
-        $scope.comment.bookId = post._id;
-        // $scope.comment.userAvatarUrl = $scope.user.avatarUrl;
-        $http.post(root + '/api/books/comment', $scope.comment).success(function(response) {
-            window.location.href = '#/books/detail/{{book._id}}';
-        });
-
+        if ($scope.comment.commentBody.length > 0 && $scope.comment.rate > 0) {
+            $scope.comment.createdDate = Date.now();
+            $scope.comment.userId = $scope.user._id;
+            $scope.comment.bookId = post._id;
+            $http.post(root + '/api/books/comment', $scope.comment).success(function(response) {
+                $scope.comment.commentBody = '';
+                $scope.getBook();
+                $scope.miss = '';
+            });
+        } else {
+            $scope.miss = "Bạn chưa để lại ý kiến hoặc chưa đánh giá điểm.";
+        }
     }
+
     $scope.init = function() {
         $scope.user = $cookieStore.get('user');
         $scope.token = $cookieStore.get('token');
     }
+
     $scope.isLogged = function() {
         return $cookieStore.get('token') != undefined;
     }
+
     $scope.logOut = function() {
         $cookieStore.remove('token');
         $cookieStore.remove('user');
@@ -163,6 +170,7 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
             $location.url("/login")
         }
     }
+
     $scope.summitLogin = function() {
         $http.post(root + '/api/auth', $scope.loginUser).success(function(response) {
             var isSuccess = response.success;
@@ -171,8 +179,6 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
                 $cookieStore.put('user', response.user);
                 $scope.user = $cookieStore.get('user');
                 $scope.token = $cookieStore.get('token');
-                //Redirect here
-                $location.url("/")
             } else {
                 //Raise Error
                 alert(response.message);
@@ -187,8 +193,9 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
             }
         }).error(function(data, status, headers, config) {
             console.log(data, status, headers, config);
-        });;
+        });
     }
+
     $scope.summitSignup = function() {
         $http.post(root + '/api/signup/', $scope.signUpUser).success(function(response) {
             var isSuccess = response.success;
@@ -197,8 +204,6 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
                 $cookieStore.put('user', response.user);
                 $scope.user = $cookieStore.get('user');
                 $scope.token = $cookieStore.get('token');
-                //Redirect here
-                $location.url("/")
             } else {
                 //Raise Error
                 alert(response.message);
