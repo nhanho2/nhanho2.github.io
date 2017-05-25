@@ -6,37 +6,52 @@
             <div class="text-center">
                 <img ng-src="{{user.avatarUrl}}" class="img-responsive profile-img" alt="avatar">
                 <h4><b>{{user.name}}</b></h4>
-                <label class="custom-file-upload">                               
-                            <input type="file"/><span class="glyphicon glyphicon-camera"></span> Ảnh đại diện từ máy
-                    </label>
             </div>
         </div>
         <!-- edit form column -->
         <div class="col-md-8 col-sm-6 col-xs-12">
             <h3><strong>Thông tin cá nhân</strong></h3>
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" ng-submit="updateUser()">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Mã tài khoản</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" ng-model="edit._id" ng-readonly="true">
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Họ tên</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" ng-model="user.name">
+                        <input class="form-control" type="text" ng-model="edit.name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Email</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email" ng-model="user.email">
+                        <input class="form-control" type="email" ng-model="edit.email">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Mật khẩu</label>
+                    <label class="col-md-3 control-label">Mật khẩu hiện tại</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password" ng-model="user.password">
+                        <input class="form-control" type="password" ng-model="edit.currentPassword">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">Xác nhận mật khẩu</label>
+                    <label class="col-md-3 control-label">Mật khẩu mới</label>
                     <div class="col-md-8">
-                        <input class="form-control" type="password" ng-model="user.password">
+                        <input class="form-control" type="password" ng-model="edit.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Xác nhận mật khẩu mới</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="password" ng-model="edit.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Địa chỉ ảnh</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" ng-model="edit.avatarUrl">
                     </div>
                 </div>
                 <div class="form-group">

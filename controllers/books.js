@@ -50,20 +50,20 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
     $scope.addBook = function() {
         console.log($scope.book);
         $http.post(root + '/api/books/', $scope.book).success(function(response) {
-            window.location.href = '#/admin/';
+            $location.url('/admin');
         });
     }
 
     $scope.updateBook = function() {
         var id = $routeParams.id;
         $http.put(root + '/api/books/' + id, $scope.book).success(function(response) {
-            window.location.href = '#/books/' + $routeParams.id;
+            $location.url('/admin');
         });
     }
 
     $scope.removeBook = function(id) {
         $http.delete(root + '/api/books/' + id).success(function(response) {
-            window.location.href = '#/admin/';
+            $location.url('/admin');
         });
     }
 
@@ -167,12 +167,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
     $scope.viewProfile = function() {
         var token = $cookieStore.get('token');
         if (token === undefined) {
-            $location.url("/login")
+            $location.url("/login");
         }
     }
 
     $scope.summitLogin = function() {
-        $http.post(root + '/api/auth', $scope.loginUser).success(function(response) {
+        $http.post(root + '/api/users/auth', $scope.loginUser).success(function(response) {
             var isSuccess = response.success;
             if (isSuccess) {
                 $cookieStore.put('token', response.token);
@@ -181,7 +181,7 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
                 $scope.token = $cookieStore.get('token');
             } else {
                 //Raise Error
-                alert(response.message);
+
                 $scope.error = "";
                 if (response.message === "Authentication failed. User not found.") {
                     $scope.error = "Không tìm thấy người dùng";
@@ -197,13 +197,14 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
     }
 
     $scope.summitSignup = function() {
-        $http.post(root + '/api/signup/', $scope.signUpUser).success(function(response) {
+        $http.post(root + '/api/users/signup', $scope.signUpUser).success(function(response) {
             var isSuccess = response.success;
             if (isSuccess) {
                 $cookieStore.put('token', response.token);
                 $cookieStore.put('user', response.user);
                 $scope.user = $cookieStore.get('user');
                 $scope.token = $cookieStore.get('token');
+                $location.url('/');
             } else {
                 //Raise Error
                 alert(response.message);
@@ -219,4 +220,12 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
         });
     }
 
+    $scope.edit = $scope.user;
+    $scope.updateUser = function() {
+        console.log($scope.edit);
+        $http.put(root + '/api/users', $scope.edit).success(function(response) {
+            console.log('update success');
+            $location.url('/profile');
+        });
+    }
 }]);
