@@ -1,4 +1,4 @@
-myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$cookieStore', function($scope, $http, $location, $routeParams, $cookieStore) {
+myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', 'cartOrder', '$cookieStore', function($scope, $http, $location, $routeParams, cartOrder, $cookieStore) {
     console.log('bookCtrl loaded...');
     var root = 'https://green-web-bookstore.herokuapp.com';
     $scope.getBooks = function() {
@@ -220,12 +220,75 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$
         });
     }
 
-    $scope.edit = $scope.user;
+    $scope.edit = $cookieStore.get('user');
     $scope.updateUser = function() {
         console.log($scope.edit);
         $http.put(root + '/api/users', $scope.edit).success(function(response) {
             console.log('update success');
-            $location.url('/profile');
+            $scope.user = response;
+            $cookieStore.put('user', response.user);
+            $scope.user = $cookieStore.get('user');
+            window.location.href = '/profile';
         });
+    }
+
+
+    $scope.qty = 1;
+    $scope.all = cartOrder.total;
+    $scope.sum = function() {
+        cartOrder.total.totalQty = 0;
+        cartOrder.total.totalPrice = 0;
+        for (var i = 0; i < $scope.cart.length; i++) {
+            cartOrder.total.totalPrice += $scope.cart[i].price * $scope.cart[i].quantity;
+            cartOrder.total.totalQty += $scope.cart[i].quantity;
+        }
+    }
+    $scope.addCart = function(item) {
+        if ($scope.qty > 0) {
+            if (cartOrder.cart.length > 0) {
+                for (var i = 0; i < cartOrder.cart.length; i++) {
+                    if (cartOrder.cart[i]._book === item._id) {
+                        $scope.addedItem = true;
+                        cartOrder.cart[i].quantity += $scope.qty;
+                        cartOrder.item.quantity = cartOrder.cart.quantity;
+                        $cookieStore.put('cart', cartOrder.cart);
+                        $cookieStore.put('order', cartOrder.item);
+                        $scope.cart = cartOrder.cart;
+                    }
+                }
+                if ($scope.addedItem) {
+                    $scope.addedItem = false;
+
+                } else {
+                    cartOrder.cart.push({ _book: item._id, title: item.title, price: item.sellingPrice, image: item.images.main, quantity: $scope.qty });
+                    cartOrder.item.push({ _book: item._id, price: item.sellingPrice, quantity: $scope.qty });
+                    console.log(item._id)
+                    $cookieStore.put('order', cartOrder.item);
+                    $cookieStore.put('cart', cartOrder.cart);
+                    $scope.cart = cartOrder.cart;
+
+                }
+            } else {
+                cartOrder.cart.push({ _book: item._id, title: item.title, price: item.sellingPrice, image: item.images.main, quantity: $scope.qty });
+                cartOrder.item.push({ _book: item._id, price: item.sellingPrice, quantity: $scope.qty });
+                $cookieStore.put('order', cartOrder.item);
+                $cookieStore.put('cart', cartOrder.cart);
+                $scope.cart = cartOrder.cart;
+
+            }
+        }
+        $scope.sum();
+
+    }
+
+
+    $scope.removeCart = function(item) {
+        $scope.cart.splice(item, 1);
+        cartOrder.item.splice(item, 1);
+        $scope.all.totalPrice = 0;
+        $scope.sum();
+        $cookieStore.put('order', cartOrder.item);
+        $cookieStore.put('cart', cartOrder.cart);
+
     }
 }]);

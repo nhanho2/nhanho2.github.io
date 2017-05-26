@@ -41,6 +41,10 @@ myApp.config(function($routeProvider, $locationProvider) {
             templateUrl: 'pages/cart.html',
             controller: 'bookCtrl'
         })
+        .when('/order', {
+            templateUrl: 'pages/order.html',
+            controller: 'bookCtrl'
+        })
         .when('/books/category/:id', {
             controller: 'bookCtrl',
             templateUrl: 'pages/category.html'

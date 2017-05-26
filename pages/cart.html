@@ -1,51 +1,25 @@
 <!--Cart Page-->
 <div class="container cart">
-    <div class="row">
-        <h3 class="block-title">Your Shopping Cart</h3>
+    <div class="row" ng-repeat="item in cart">
+        <h3 class="block-title">Giỏ hành của bạn</h3>
         <div class="col-sm-2 cart-detail">
-            <h5><strong>Product</strong></h5>
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51Y-fUPNSAL._AC_US160_.jpg" class="img-responsive cart-img" alt="Power Ranger">
+            <h5><strong>Sản phẩm</strong></h5>
+            <img ng-src="{{item.image}}" class="img-responsive cart-img">
         </div>
         <div class="col-sm-2 cart-name">
             <br>
-            <h4>Saban's Power Ranger: Aftershock</h4>
-            by <a href="#" class="author">Nhan Ho</a><br>Status: <span class="text-success"><b>In Stock</b></span>
+            <h4>{{item.title}}</h4>
         </div>
         <div class="col-sm-2 cart-detail">
-            <h5><strong>Quantity</strong></h5>
-            <input class="quantity" type="number" value="1" />
+            <h5><strong>Số lượng</strong></h5>
+            {{item.quantity}}
         </div>
         <div class="col-sm-2 cart-detail">
-            <h5><strong>Price</strong></h5>
-            <h5>10.000 VND</h5>
+            <h5><strong>Đơn giá</strong></h5>
+            <h5>{{item.price}}</h5>
         </div>
         <div class="col-sm-2 cart-detail">
-            <h5><strong>Total</strong></h5>
-            <h5>10.000 VND</h5>
-        </div>
-        <div class="col-sm-2 cart-detail">
-            <button class="btn btn-danger btn-remove"><span class="glyphicon glyphicon-trash"></span></button>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-2 cart-detail">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/51jW4VbcLjL._AC_US160_.jpg" class="img-responsive cart-img" alt="Star Wars: Darth Vader Vol.1">
-        </div>
-        <div class="col-sm-2 cart-name">
-            <h4>Star Wars: Darth Vader Vol.1: Vader (Darth Vader (2015-2016))</h4>
-            by <a href="#" class="author">Nhan Ho</a><br>Status: <span class="text-success"><b>In Stock</b></span>
-        </div>
-        <div class="col-sm-2 cart-detail">
-            <br>
-            <input class="quantity" type="number" value="1" />
-        </div>
-        <div class="col-sm-2 cart-detail">
-            <br>
-            <h5>10.000 VND</h5>
-        </div>
-        <div class="col-sm-2 cart-detail">
-            <br>
+            <h5><strong>Thành tiền</strong></h5>
             <h5>10.000 VND</h5>
         </div>
         <div class="col-sm-2 cart-detail">
@@ -58,35 +32,7 @@
         <div class="col-sm-4">
             <div class="row">
                 <div class="col-sm-6">
-                    <h5><span class="pull-left">Subtotal</span></h5>
-                </div>
-                <div class="col-sm-6">
-                    <h5><strong><span class="pull-right">20.000 VND</span></strong></h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h5><span class="pull-left">VAT 10%</span></h5>
-                </div>
-                <div class="col-sm-6">
-                    <h5><strong><span class="pull-right">2.000 VND</span></strong></h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h4><strong><span class="pull-left">Total</span></strong></h4>
+                    <h4><strong><span class="pull-left">Tổng tiền</span></strong></h4>
                 </div>
                 <div class="col-sm-6">
                     <h4><strong><span class="pull-right">22.000 VND</span></strong></h4>
@@ -98,8 +44,8 @@
     <div class="row">
         <div class="col-sm-8"></div>
         <div class="col-sm-4 pay-step">
-            <button class="btn btn-basic"><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</button>
-            <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Confirm</button>
+            <a href="#/" class="btn btn-basic"><span class="glyphicon glyphicon-shopping-cart"></span> Tiếp tục mua hàng</a>
+            <button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Xác nhận mua</button>
         </div>
     </div>
 </div>
