@@ -37,7 +37,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#/">Trang chủ</a></li>
-                    <li><a href="#cart">Giới thiệu</a></li>
+                    <li><a href="#/">Giới thiệu</a></li>
                     <li><a href="#contact">Liên hệ</a></li>
                     <li>
                         <form class="navbar-form" role="search" ng-submit="submitSearch()">
@@ -67,12 +67,13 @@
                                         <h4 class="block-title block-login">Sản phẩm đã chọn</h4>
                                     </div>
                                     <div class="modal-body">
+                                        {{cartOrder.price}}sdfasfdas
                                         <div class="row" ng-repeat="item in cart">
                                             <div class="col-sm-3">
                                                 <a href="#/books/detail/{{book._id}}"><img ng-src="{{item.image}}" class="img-responsive cart-item-img"></a>
                                             </div>
                                             <div class="col-sm-3">
-                                                <h5 class="price-item">{{item.price}} </h5>
+                                                <h5 class="price-item">{{item.price}}</h5>
                                             </div>
                                             <div class="col-sm-3">
                                                 <h5 class="qty-item">{{item.quantity}}</h5>
@@ -142,6 +143,7 @@
                         <div class="dropdown-content user-drop-content">
                             <a href="#admin"><span class="glyphicon glyphicon-lock"></span> Admin</a>
                             <a href="#profile"><span class="glyphicon glyphicon-file"></span> Hồ sơ</a>
+                            <a href="#cart"><span class="glyphicon glyphicon-list-alt"></span> Giỏ hàng</span></a>
                             <a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</span></a>
                             <a href="#/" ng-click="logOut()" class="user-logout"><span class="glyphicon glyphicon-off"></span> Đăng xuất</span></a>
                         </div>
