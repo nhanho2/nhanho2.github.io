@@ -1,6 +1,7 @@
 myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', 'cartOrder', '$cookieStore', function($scope, $http, $location, $routeParams, cartOrder, $cookieStore) {
     console.log('bookCtrl loaded...');
     var root = 'https://green-web-bookstore.herokuapp.com';
+    $scope.loaded = false;
     $scope.getBooks = function() {
         $http.get(root + '/api/books').success(function(response) {
             $scope.books = response;
@@ -24,6 +25,7 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', 'c
     $scope.getGenres = function() {
         $http.get(root + '/api/genres').success(function(response) {
             $scope.genres = response;
+            $scope.loaded = true;
         });
     }
 
@@ -31,6 +33,20 @@ myApp.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', 'c
         var id = $routeParams.id;
         $http.get(root + '/api/books/' + id).success(function(response) {
             $scope.book = response;
+            var rateTotal = 0;
+            var rateLength = 0;
+            for (var i = 0; i < $scope.book.comments.length; i++) {
+                if ($scope.book.comments[i].hasOwnProperty('rate')) {
+                    rateTotal += $scope.book.comments[i].rate
+                    rateLength += 1
+                }
+            }
+            if (rateTotal == 0) {
+                $scope.rateAvr = 4
+            } else {
+                $scope.rateAvr = rateTotal / rateLength;
+            }
+            $scope.save = Math.round((($scope.book.previousPrice - $scope.book.sellingPrice) / $scope.book.previousPrice) * 100);
         });
     }
 

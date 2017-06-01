@@ -16,6 +16,7 @@
                 </div>
                 <div class="col-sm-8">
                     <h2><strong>{{book.title}}</strong></h2>
+                    <span uib-rating ng-model="rateAvr" max="max" read-only="true" on-hover="hoveringOver(value)"></span> ({{book.comments.length}} đánh giá)
                     <h5>Tác giả: <a href="#/books/author/{{book.author}}">{{book.author}}</a></h5>
                     <hr>
                     <h5>Thể loại: <a href="#/books/genre/{{book.genre._id}}">{{book.genre.name}}</a></h5>
@@ -26,9 +27,10 @@
                     <hr>
                     <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
                     <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
+                    <span class="text-danger"><b>Tiết kiệm: {{save}}%</b></span>
                     <hr>
                     <p>
-                        <strong>Số lượng:   </strong><input type="number" class="quantity" value="1" />
+                        <strong>Số lượng:   </strong><input type="number" class="quantity" min="1" ng-model="qty" />
                     </p>
                     <hr>
                     <div class="container-fluid">

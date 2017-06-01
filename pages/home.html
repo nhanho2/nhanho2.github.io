@@ -15,7 +15,7 @@
                 <div class="carousel" ng-init="getBanner()">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="banner in banners track by banner._id" index="$index">
-                            <img ng-src="{{banner.imageUrl}}" style="margin:auto;">
+                            <img ng-src="{{banner.imageUrl}}">
                             <div class="carousel-caption">
                                 <h4>{{banner.title}}</h4>
                                 <p>{{banner.createDate|date}}</p>
@@ -37,11 +37,7 @@
                                 <p class="pre-price"><strong>{{book.previousPrice|number}} đ</strong></p>
                                 <p class="price"><strong>{{book.sellingPrice|number}} đ</strong></p>
                                 <div class="rating">
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span uib-rating ng-model="rateAvr" max="max" read-only="true" on-hover="hoveringOver(value)"></span>
                                 </div>
                             </div>
                             <div class="panel-footer">
